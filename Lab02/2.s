@@ -30,3 +30,6 @@ case3:
 case4:
     srli x21, x22, 1
     beq x0, x0, exit
+
+exit:
+    j exit
