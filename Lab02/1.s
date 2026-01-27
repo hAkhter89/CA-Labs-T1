@@ -12,3 +12,5 @@ main:
     beq x0, x0, Loop
 Else:
     sub x19, x20, x21
+exit:
+    j exit
