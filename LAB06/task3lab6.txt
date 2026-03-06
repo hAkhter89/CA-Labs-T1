@@ -1,0 +1,154 @@
+task3lab6
+
+
+module top_ALU(
+
+input clk,
+input rst,
+input btn,                // push button for debouncer
+input [15:0] switches,
+output [15:0] leds
+
+);
+
+// ALU operands
+wire [31:0] A;
+wire [31:0] B;
+
+assign A = 32'h10101010;
+assign B = 32'h01010101;
+
+
+// debounced button output
+wire btn_clean;
+
+
+// switch module output
+wire [31:0] switchData;
+
+
+// ALU outputs
+wire [31:0] ALU_result;
+wire Zero;
+
+
+// ALU control from switches
+wire [3:0] ALU_control;
+assign ALU_control = switchData[3:0];
+
+
+debouncer db(
+
+    .clk(clk),
+    .pbin(btn),
+    .pbout(btn_clean)
+);
+
+switch switch_debounced_input(
+
+    .clk(clk),
+    .rst(rst),
+    .btns(16'b0),
+    .writeData(32'b0),
+    .writeEnable(1'b0),
+    .readEnable(btn_clean),     // read switches off debounced input
+    .memAddress(30'b0),
+    .switches(switches),
+    .readData(switchData)
+);
+
+
+ALU alu_unit(
+
+    .A(A),
+    .B(B),
+    .ALU_control(ALU_control),
+    .ALU_result(ALU_result),
+    .Zero(Zero)
+);
+
+
+leds led_results(
+
+    .clk(clk),
+    .rst(rst),
+    .writeData(ALU_result),
+    .writeEnable(1'b1),
+    .readEnable(1'b0),
+    .memAddress(30'b0),
+    .readData(),
+    .leds(leds)
+);
+
+endmodule
+
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports btn]
+set_property IOSTANDARD LVCMOS33 [get_ports rst]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[15]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[14]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[13]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[12]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[11]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[10]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[9]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[8]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[15]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[14]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[13]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[12]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[11]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[10]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[9]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[8]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[0]}]
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property PACKAGE_PIN U18 [get_ports rst]
+set_property PACKAGE_PIN T18 [get_ports btn]
+set_property PACKAGE_PIN V17 [get_ports {switches[0]}]
+set_property PACKAGE_PIN V16 [get_ports {switches[1]}]
+set_property PACKAGE_PIN W16 [get_ports {switches[2]}]
+set_property PACKAGE_PIN W17 [get_ports {switches[3]}]
+set_property PACKAGE_PIN W15 [get_ports {switches[4]}]
+set_property PACKAGE_PIN V15 [get_ports {switches[5]}]
+set_property PACKAGE_PIN W14 [get_ports {switches[6]}]
+set_property PACKAGE_PIN W13 [get_ports {switches[7]}]
+set_property PACKAGE_PIN V2 [get_ports {switches[8]}]
+set_property PACKAGE_PIN T3 [get_ports {switches[9]}]
+set_property PACKAGE_PIN T2 [get_ports {switches[10]}]
+set_property PACKAGE_PIN R3 [get_ports {switches[11]}]
+set_property PACKAGE_PIN W2 [get_ports {switches[12]}]
+set_property PACKAGE_PIN U1 [get_ports {switches[13]}]
+set_property PACKAGE_PIN T1 [get_ports {switches[14]}]
+set_property PACKAGE_PIN R2 [get_ports {switches[15]}]
+set_property PACKAGE_PIN U16 [get_ports {leds[0]}]
+set_property PACKAGE_PIN E19 [get_ports {leds[1]}]
+set_property PACKAGE_PIN U19 [get_ports {leds[2]}]
+set_property PACKAGE_PIN V19 [get_ports {leds[3]}]
+set_property PACKAGE_PIN W18 [get_ports {leds[4]}]
+set_property PACKAGE_PIN U15 [get_ports {leds[5]}]
+set_property PACKAGE_PIN U14 [get_ports {leds[6]}]
+set_property PACKAGE_PIN V14 [get_ports {leds[7]}]
+set_property PACKAGE_PIN V13 [get_ports {leds[8]}]
+set_property PACKAGE_PIN V3 [get_ports {leds[9]}]
+set_property PACKAGE_PIN W3 [get_ports {leds[10]}]
+set_property PACKAGE_PIN U3 [get_ports {leds[11]}]
+set_property PACKAGE_PIN P3 [get_ports {leds[12]}]
+set_property PACKAGE_PIN N3 [get_ports {leds[13]}]
+set_property PACKAGE_PIN P1 [get_ports {leds[14]}]
+set_property PACKAGE_PIN L1 [get_ports {leds[15]}]
