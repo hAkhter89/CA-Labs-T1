@@ -1,0 +1,83 @@
+lab7task2b
+
+module RegisterFile_tb;
+
+reg clk;
+reg reset;
+reg [4:0] rs1;
+reg [4:0] rs2;
+reg [4:0] rd;
+reg [31:0] writeData;
+reg regWrite;
+
+wire [31:0] readData1;
+wire [31:0] readData2;
+
+Register RF(
+    .clk(clk),
+    .reset(reset),
+    .rs1(rs1),
+    .rs2(rs2),
+    .rd(rd),
+    .writeData(writeData),
+    .regWrite(regWrite),
+    .readData1(readData1),
+    .readData2(readData2)
+);
+
+/* CLOCK */
+always #5 clk = ~clk;
+
+initial begin
+
+clk = 0;
+reset = 1;
+regWrite = 0;
+
+#10 reset = 0;
+
+/* Write x5 = DEEADBEEF */
+
+rd = 5;
+writeData = 32'hDEADBEEF;
+regWrite = 1;
+
+#10 regWrite = 0;
+
+rs1 = 5; // test for new value
+#10;
+
+/* write to x0 */
+
+rd = 0;
+writeData = 32'hFFFFFFFF;
+regWrite = 1;
+
+#10 regWrite = 0;
+
+rs1 = 0;
+#10;
+
+/* Two reads */
+
+rs1 = 5;
+rs2 = 0;
+
+#10;
+
+/* Overwrite register */
+
+rd = 5;
+writeData = 32'h11111111;
+regWrite = 1;
+
+#10 regWrite = 0;
+
+rs1 = 5;
+
+#20;
+$finish;
+
+end
+
+endmodule
