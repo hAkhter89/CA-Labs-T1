@@ -1,0 +1,61 @@
+lab7task2c
+
+`timescale 1ns / 1ps
+
+module top_rf_alu(
+
+input wire clk,
+input wire reset,
+
+input wire [4:0] rs1,
+input wire [4:0] rs2,
+input wire [4:0] rd,
+
+input wire [3:0] alu_ctrl,
+input wire reg_write,
+
+input wire [31:0] write_data,
+
+output wire [31:0] read_data1,
+output wire [31:0] read_data2,
+
+output wire [31:0] alu_result,
+output wire zero_flag
+
+);
+
+/* Register File */
+
+Register u_rf(
+
+.clk(clk),
+.reset(reset),
+
+.rs1(rs1),
+.rs2(rs2),
+.rd(rd),
+
+.writeData(write_data),
+.regWrite(reg_write),
+
+.readData1(read_data1),
+.readData2(read_data2)
+
+);
+
+
+/* ALU */
+
+ALU u_alu(
+
+.A(read_data1),
+.B(read_data2),
+
+.ALU_control(alu_ctrl),
+
+.ALU_result(alu_result),
+.Zero(zero_flag)
+
+);
+
+endmodule

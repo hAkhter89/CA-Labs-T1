@@ -1,0 +1,121 @@
+lab7task2cii
+
+module RF_ALU_FSM_tb;
+
+    // Clock & reset
+    reg clk;
+    reg reset;
+
+    // Inputs to DUT
+    reg [4:0] rs1, rs2, rd;
+    reg [3:0] alu_ctrl;
+    reg reg_write;
+    reg [31:0] write_data;
+
+    // Outputs from DUT
+    wire [31:0] read_data1;
+    wire [31:0] read_data2;
+    wire [31:0] alu_result;
+    wire zero_flag;
+
+    // Instantiate top module
+    top_rf_alu DUT (
+        .clk(clk),
+        .reset(reset),
+        .rs1(rs1),
+        .rs2(rs2),
+        .rd(rd),
+        .alu_ctrl(alu_ctrl),
+        .reg_write(reg_write),
+        .write_data(write_data),
+        .read_data1(read_data1),
+        .read_data2(read_data2),
+        .alu_result(alu_result),
+        .zero_flag(zero_flag)
+    );
+
+    // Clock generation
+    always #5 clk = ~clk;
+
+    // FSM states
+    reg [1:0] state;
+    parameter IDLE = 2'd0,
+              READ_REGISTERS = 2'd1,
+              ALU_OPERATION = 2'd2,
+              WRITE_REGISTERS = 2'd3;
+
+    // ALU operation counter
+    reg [3:0] op_count;
+
+    // FSM logic
+    always @(posedge clk) begin
+        if (reset) begin
+            state <= IDLE;
+            rs1 <= 0; rs2 <= 0; rd <= 0;
+            alu_ctrl <= 0; reg_write <= 0; write_data <= 0;
+            op_count <= 0;
+        end else begin
+            case(state)
+
+                // Initialize registers
+                IDLE: begin
+                    rd <= 5'd1;
+                    write_data <= 32'h10101010;
+                    reg_write <= 1;
+                    state <= READ_REGISTERS;
+                end
+
+                // Read values from registers
+                READ_REGISTERS: begin
+                    reg_write <= 0;
+                    rs1 <= 5'd1;
+                    rs2 <= 5'd2;  // example second register
+                    op_count <= 0;
+                    state <= ALU_OPERATION;
+                end
+
+                // Perform all ALU operations
+                ALU_OPERATION: begin
+                    reg_write <= 0;
+                    case(op_count)
+                        0: begin alu_ctrl <= 4'b0010; rd <= 5'd4; end // ADD
+                        1: begin alu_ctrl <= 4'b0110; rd <= 5'd5; end // SUB
+                        2: begin alu_ctrl <= 4'b0000; rd <= 5'd6; end // AND
+                        3: begin alu_ctrl <= 4'b0001; rd <= 5'd7; end // OR
+                        4: begin alu_ctrl <= 4'b0011; rd <= 5'd8; end // XOR
+                        5: begin alu_ctrl <= 4'b0100; rd <= 5'd9; end // SLL
+                        6: begin alu_ctrl <= 4'b0101; rd <= 5'd10; end // SRL
+                        7: begin alu_ctrl <= 4'b0111; rd <= 5'd11; end // BEQ
+                    endcase
+
+                    // Move to next operation or next state
+                    if(op_count == 7)
+                        state <= WRITE_REGISTERS;
+                    else
+                        op_count <= op_count + 1;
+                end
+
+                // Write back results (already assigned rd in ALU_OPERATION)
+                WRITE_REGISTERS: begin
+                    reg_write <= 1;
+                    write_data <= alu_result;
+
+                    if(op_count == 7) begin
+                        reg_write <= 0;
+                        state <= IDLE; // Testbench could loop or finish
+                    end
+                end
+
+            endcase
+        end
+    end
+
+    // Testbench initial block
+    initial begin
+        clk = 0;
+        reset = 1;
+        #10 reset = 0;
+        #400 $finish;
+    end
+
+endmodule
