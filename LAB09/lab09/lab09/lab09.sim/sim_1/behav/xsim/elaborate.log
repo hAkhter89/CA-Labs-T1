@@ -1,0 +1,16 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 346e16134d5b433d8e27ce9464636f4e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot task2_tb_behav xil_defaultlib.task2_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 1 for port 'funct7' [C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sim_1/new/task2_tb.v:34]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MainControl
+Compiling module xil_defaultlib.ALUControl
+Compiling module xil_defaultlib.task2_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot task2_tb_behav

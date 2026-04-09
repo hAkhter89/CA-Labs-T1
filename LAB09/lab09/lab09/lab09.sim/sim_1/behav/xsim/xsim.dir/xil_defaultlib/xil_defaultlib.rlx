@@ -1,0 +1,11 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sim_1/new/task2_tb.v,1774505738,verilog,,,,task2_tb,,,,,,,,
+C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/ALUControl.v,1774507420,verilog,,C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/maincontrol.v,,ALUControl,,,,,,,,
+C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/leds.v,1775714353,verilog,,C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/maincontrol.v,,leds,,,,,,,,
+C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/maincontrol.v,1774505868,verilog,,C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sim_1/new/task2_tb.v,,MainControl,,,,,,,,
+C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/switches.v,1775714322,verilog,,C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/top.v,,switches,,,,,,,,
+C:/Users/ha10609/Downloads/CA-Labs-T1/LAB09/lab09/lab09/lab09.srcs/sources_1/new/top.v,1775713741,verilog,,,,top,,,,,,,,
