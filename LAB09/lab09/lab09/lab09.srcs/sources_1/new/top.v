@@ -27,41 +27,8 @@ module top(
     output [15:0] led
 );
 
-    // 50 Hz tick generator (assuming 50 MHz clock)
-    reg [19:0] slow_clk;
-    reg tick_50hz;
-    
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            slow_clk <= 0;
-            tick_50hz <= 0;
-        end else begin
-            if (slow_clk == 999_999) begin
-                slow_clk <= 0;
-                tick_50hz <= 1;
-            end else begin
-                slow_clk <= slow_clk + 1;
-                tick_50hz <= 0;
-            end
-        end
-    end
-    
-    
-    // Sampling
-    reg btn_sampled, btn_prev;
     wire btn_pulse;
-    
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            btn_sampled <= 0;
-            btn_prev <= 0;
-        end else if (tick_50hz) begin
-            btn_prev <= btn_sampled;
-            btn_sampled <= btn_next;   // sample button at 50 Hz
-        end
-    end
-
-    assign btn_pulse = btn_sampled & ~btn_prev;
+    assign btn_pulse = ~clk;
     // switches module
     wire [31:0] switches_out;
     switches u_sw(
@@ -91,7 +58,7 @@ module top(
                 READ_SWITCHES: next_state=COMPUTE;
                 COMPUTE: next_state=WRITE_LED;
                 WRITE_LED: next_state=IDLE;
-                default: next_state=IDLE;
+                default: next_state=WRITE_LED;
             endcase
         end
     end
