@@ -1,0 +1,272 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Apr  2 04:35:29 2026
+# Process ID: 6204
+# Current directory: C:/Users/tau/Downloads/lab09/lab09
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2824 C:\Users\tau\Downloads\lab09\lab09\lab09.xpr
+# Log file: C:/Users/tau/Downloads/lab09/lab09/vivado.log
+# Journal file: C:/Users/tau/Downloads/lab09/lab09\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/tau/Downloads/lab09/lab09/lab09.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Labs ca/lab09' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/debouncer.v', nor could it be found using path 'D:/Labs ca/lab08/lab08.srcs/sources_1/new/debouncer.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/leds.v', nor could it be found using path 'D:/Labs ca/lab08/lab08.srcs/sources_1/new/leds.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/switches.v', nor could it be found using path 'D:/Labs ca/lab08/lab08.srcs/sources_1/new/switches.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 1016.316 ; gain = 0.000
+update_compile_order -fileset sources_1
+close [ open C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/leds.v w ]
+add_files C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/leds.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/leds.v] -no_script -reset -force -quiet
+remove_files  C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/leds.v
+export_ip_user_files -of_objects  [get_files C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/debouncer.v] -no_script -reset -force -quiet
+remove_files  C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/debouncer.v
+close [ open C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/switches.v w ]
+add_files C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/switches.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/switches.v] -no_script -reset -force -quiet
+remove_files  C:/Users/tau/Downloads/lab09/lab08/lab08.srcs/sources_1/new/switches.v
+update_compile_order -fileset sim_1
+set_property top task2_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+[Thu Apr  2 04:58:10 2026] Launched synth_1...
+Run output will be captured here: C:/Users/tau/Downloads/lab09/lab09/lab09.runs/synth_1/runme.log
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'task2_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj task2_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/ALUControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/MainControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MainControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sim_1/new/MainControl_ALU_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module task2_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+"xelab -wto bc0abfa7b4a94762953d3e93ee804dfc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot task2_tb_behav xil_defaultlib.task2_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto bc0abfa7b4a94762953d3e93ee804dfc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot task2_tb_behav xil_defaultlib.task2_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 1 for port 'funct7' [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sim_1/new/MainControl_ALU_tb.v:21]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MainControl
+Compiling module xil_defaultlib.ALUControl
+Compiling module xil_defaultlib.task2_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot task2_tb_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim/xsim.dir/task2_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr  2 04:58:26 2026...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1016.316 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "task2_tb_behav -key {Behavioral:sim_1:Functional:task2_tb} -tclbatch {task2_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source task2_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 150 ns : File "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sim_1/new/MainControl_ALU_tb.v" Line 47
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'task2_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1016.316 ; gain = 0.000
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+[Thu Apr  2 05:15:53 2026] Launched synth_1...
+Run output will be captured here: C:/Users/tau/Downloads/lab09/lab09/lab09.runs/synth_1/runme.log
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: top
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1480.238 ; gain = 241.504
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/top_control.v:3]
+	Parameter IDLE bound to: 2'b00 
+	Parameter READ_SWITCHES bound to: 2'b01 
+	Parameter COMPUTE bound to: 2'b10 
+	Parameter WRITE_LED bound to: 2'b11 
+INFO: [Synth 8-6157] synthesizing module 'switches' [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/switches.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'switches' (1#1) [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/switches.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/top_control.v:41]
+INFO: [Synth 8-6157] synthesizing module 'MainControl' [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/MainControl.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/MainControl.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'MainControl' (2#1) [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/MainControl.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALUControl' [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/ALUControl.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (3#1) [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/ALUControl.v:3]
+INFO: [Synth 8-6157] synthesizing module 'leds' [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/leds.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'leds' (4#1) [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/leds.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'top' (5#1) [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/top_control.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1530.504 ; gain = 291.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1551.941 ; gain = 313.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1551.941 ; gain = 313.207
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1551.941 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/constrs_1/new/constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'btn_next'. [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/constrs_1/new/constraints.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'btn_next'. [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/constrs_1/new/constraints.xdc:12]
+Finished Parsing XDC File [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/constrs_1/new/constraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/constrs_1/new/constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1645.516 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 1664.141 ; gain = 425.406
+16 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1664.141 ; gain = 647.824
+close [ open C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/debouncer.v w ]
+add_files C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/debouncer.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+[Thu Apr  2 05:35:20 2026] Launched synth_1...
+Run output will be captured here: C:/Users/tau/Downloads/lab09/lab09/lab09.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/tau/Downloads/lab09/lab09/lab09.runs/synth_1
+
+set_property top top [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim/simulate.log"
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1961.059 ; gain = 101.070
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/debouncer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module button_debouncer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/leds.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module leds
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/switches.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module switches
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Downloads/lab09/lab09/lab09.srcs/sources_1/new/top_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+"xelab -wto bc0abfa7b4a94762953d3e93ee804dfc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto bc0abfa7b4a94762953d3e93ee804dfc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.button_debouncer
+Compiling module xil_defaultlib.switches
+Compiling module xil_defaultlib.MainControl
+Compiling module xil_defaultlib.ALUControl
+Compiling module xil_defaultlib.leds
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim/xsim.dir/top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr  2 05:37:40 2026...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tau/Downloads/lab09/lab09/lab09.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_behav -key {Behavioral:sim_1:Functional:top} -tclbatch {top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1961.059 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1961.059 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  2 05:53:53 2026...

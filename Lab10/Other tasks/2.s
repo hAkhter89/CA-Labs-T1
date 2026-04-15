@@ -1,60 +1,109 @@
+.data
+reset_flag:  .word 0        # 0 = no reset, 1 = reset
+switch_port: .word 5        # Simulate switch input (change to test)
+led_port:    .word 0        # LED output
+
+.equ INPUT_WAITING, 0
+.equ COUNTDOWN,     1
+
 .text
 .globl main
+
 main:
-        MOV R0, #INPUT_WAITING     # State variable
-        MOV R4, #0                 # Countdown value
+    li   a0, INPUT_WAITING      # a0 = state
+    li   s0, 0                  # s0 = countdown value
 
-MAIN_LOOP:
-        LDR R5, =RESET_FLAG
-        LDR R6, [R5]
-        CMP R6, #1
-        BEQ RESET_HANDLER
+main_loop:
+    la   t0, reset_flag
+    lw   t1, 0(t0)
+    li   t2, 1
+    beq  t1, t2, reset_handler
 
-# FSM State Check
-        CMP R0, #INPUT_WAITING
-        BEQ STATE_INPUT
+    li   t2, INPUT_WAITING
+    beq  a0, t2, state_input
+    li   t2, COUNTDOWN
+    beq  a0, t2, state_countdown
+    j    main_loop
 
-        CMP R0, #COUNTDOWN
-        BEQ STATE_COUNTDOWN
 
-        B MAIN_LOOP
+state_input:
+    la   t0, switch_port
+    lw   t1, 0(t0)              # Read switches
+    beqz t1, main_loop          # Stay if no input
 
-# Input Waiting State
-STATE_INPUT:
-        LDR R1, =SWITCH_PORT
-        LDR R2, [R1]              # Read switches
+    la   t0, led_port
+    sw   t1, 0(t0)              # Display on LEDs
 
-        CMP R2, #0
-        BEQ MAIN_LOOP             # Stay if no input
+    mv   s0, t1                 # Save value for countdown
+    li   a0, COUNTDOWN          # Change state
+    j    main_loop
 
-        # Display switch value on LEDs
-        LDR R3, =LED_PORT
-        STR R2, [R3]
+state_countdown:
+    mv   a0, s0                 # Pass countdown value
+    call countdown_sub
+    li   a0, INPUT_WAITING      # Return to input state
+    j    main_loop
 
-        # Save value for countdown
-        MOV R4, R2
 
-        # Change state
-        MOV R0, #COUNTDOWN
-        B MAIN_LOOP
+reset_handler:
+    li   a0, INPUT_WAITING
+    li   s0, 0
+    la   t0, led_port
+    sw   zero, 0(t0)            # Clear LEDs
+    # Clear reset flag
+    la   t0, reset_flag
+    sw   zero, 0(t0)
+    j    main_loop
 
-# Countdown State
-STATE_COUNTDOWN:
-        MOV R1, R4                # Pass argument
-        BL COUNTDOWN_SUB          # Call subroutine
 
-        # After countdown ends → go back
-        MOV R0, #INPUT_WAITING
-        B MAIN_LOOP
+# a0 = starting countdown value
+# Counts down to 0, updating LED each step
 
-# Reset Handler
-RESET_HANDLER:
-        MOV R0, #INPUT_WAITING
-        MOV R4, #0
+countdown_sub:
+    addi sp, sp, -16            # Allocate stack frame
+    sw   ra, 12(sp)             # Save return address
+    sw   s1, 8(sp)              # Save s1
 
-        # Clear LEDs
-        LDR R3, =LED_PORT
-        MOV R2, #0
-        STR R2, [R3]
+    mv   s1, a0                 # s1 = countdown value
 
-        B MAIN_LOOP
+countdown_loop:
+    blez s1, countdown_done     # If <= 0, done
+
+    # Write current count to LED
+    la   t0, led_port
+    sw   s1, 0(t0)
+
+    # Delay
+    call delay_sub
+
+    addi s1, s1, -1             # Decrement
+    j    countdown_loop
+
+countdown_done:
+    # Clear LEDs when done
+    la   t0, led_port
+    sw   zero, 0(t0)
+
+    lw   ra, 12(sp)             # Restore return address
+    lw   s1, 8(sp)              # Restore s1
+    addi sp, sp, 16             # Free stack frame
+    ret
+
+# Simple loop for simulation
+delay_sub:
+    addi sp, sp, -8
+    sw   ra, 4(sp)
+    sw   s2, 0(sp)
+
+    li   s2, 1000               # Delay count (adjust for simulation speed)
+
+delay_loop:
+    beqz s2, delay_done
+    addi s2, s2, -1
+    j    delay_loop
+
+delay_done:
+    lw   ra, 4(sp)
+    lw   s2, 0(sp)
+    addi sp, sp, 8
+    ret
