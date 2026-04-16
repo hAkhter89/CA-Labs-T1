@@ -1,0 +1,9 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/tau/Documents/Vivaldo docs/Lab07/Lab07.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/tau/Documents/Vivaldo docs/Lab07/Lab07.srcs/sim_1/new/ALUtb.v,1773344543,verilog,,,,RF_ALU_FSM_tb,,,,,,,,
+C:/Users/tau/Documents/Vivaldo docs/Lab07/Lab07.srcs/sim_1/new/registertb.v,1773344877,verilog,,,,Register_tb,,,,,,,,
+C:/Users/tau/Documents/Vivaldo docs/Lab07/Lab07.srcs/sources_1/new/ALU.v,1773253994,verilog,,C:/Users/tau/Documents/Vivaldo docs/Lab07/Lab07.srcs/sources_1/new/register.v,,ALU,,,,,,,,
+C:/Users/tau/Documents/Vivaldo docs/Lab07/Lab07.srcs/sources_1/new/register.v,1773344274,verilog,,C:/Users/tau/Documents/Vivaldo docs/Lab07/Lab07.srcs/sim_1/new/registertb.v,,Register,,,,,,,,

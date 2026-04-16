@@ -1,0 +1,7 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Switch Read: address=00000200, readData=00000000 (Expected: 0000A5A5)
+Memory Write: address=00000010, data=deadbeef
+Memory Read: address=00000010, readData=deadbeef (Expected: DEADBEEF)
+LED Write: address=00000100, leds_out=abcd (Expected: ABCD)
+$finish called at time : 95 ns : File "C:/Users/sf10353/Downloads/lab_08/lab_08.srcs/sim_1/new/MemorySystem_tb.v" Line 75

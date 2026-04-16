@@ -1,0 +1,58 @@
+`timescale 1ns / 1ps
+
+module tb(); 
+
+    // Testbench Signals
+    reg clk;
+    reg rst;
+    reg [15:0] switches;
+    wire [15:0] leds;
+
+    // Instantiate the Top Level FSM (Unit Under Test)
+    top_module uut (
+        .clk(clk),
+        .rst(rst),
+        .switch(switches),
+        .led(leds)
+    );
+
+    // Generate 100MHz System Clock (10ns period)
+    always #5 clk = ~clk;
+
+    initial begin
+        // 1. Initialize Inputs
+        clk = 0;
+        rst = 1;  // Start with reset asserted
+        switches = 16'd0;
+
+        // Wait for debouncer and global reset to settle
+        #100;
+        rst = 0;  
+        #100;
+        
+        switches = 16'd3; 
+        #50;
+        
+        // 3. Verify switch inputs are ignored during countdown
+        // We set switches to 0, but the FSM should continue counting down from 3
+        switches = 16'd0; 
+        
+        // Wait enough clock cycles for the countdown to reach zero.
+        #500; 
+
+        // 4. Verify mid-countdown Reset functionality
+        switches = 16'd5; // Start a new countdown from 5
+        #50;
+        switches = 16'd0;
+        #100; 
+        
+        // reset
+        rst = 1; 
+        #100;
+        rst = 0; // The FSM in WAIT STATE
+
+        #200;
+        
+        $finish; 
+    end
+endmodule

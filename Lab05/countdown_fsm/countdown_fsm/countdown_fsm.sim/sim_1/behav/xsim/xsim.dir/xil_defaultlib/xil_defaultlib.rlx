@@ -1,0 +1,10 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/tau/countdown_fsm/countdown_fsm.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sim_1/new/tb.v,1772311546,verilog,,,,tb,,,,,,,,
+C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sources_1/new/debouncer.v,1772312024,verilog,,C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sources_1/new/leds.v,,debouncer,,,,,,,,
+C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sources_1/new/leds.v,1772310736,verilog,,C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sources_1/new/switches.v,,leds,,,,,,,,
+C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sources_1/new/switches.v,1772310619,verilog,,C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sources_1/new/top_module.v,,switch,,,,,,,,
+C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sources_1/new/top_module.v,1772310653,verilog,,C:/Users/tau/countdown_fsm/countdown_fsm.srcs/sim_1/new/tb.v,,top_module,,,,,,,,
