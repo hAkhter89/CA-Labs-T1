@@ -20,21 +20,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module DataMemory(
-    input clk,
-    input MemWrite,
-    input MemRead,
-    input [8:0] address,
-    input [31:0] write_data,
-    output [31:0] read_data
-    );
+    input  wire        clk,
+    input  wire        MemWrite,
+    input  wire        MemRead,
+    input  wire [8:0]  address,      // 9-bit address for 512 locations
+    input  wire [31:0] write_data,
+    output reg  [31:0] read_data
+);
 
-    reg [31:0] mem [0:511];
+    // 512 x 32-bit memory array
+    reg [31:0] memory [0:511];
 
+    // Synchronous Write
     always @(posedge clk) begin
         if (MemWrite)
-            mem[address] <= write_data;
+            memory[address] <= write_data;
     end
 
-    assign read_data = (MemRead) ? mem[address] : 32'b0;
+    // Asynchronous Read
+    always @(*) begin
+        if (MemRead)
+            read_data = memory[address];
+        else
+            read_data = 32'd0;
+    end
 
 endmodule
