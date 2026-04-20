@@ -2,11 +2,11 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sun Apr 19 21:06:32 2026
-# Process ID: 3652
-# Current directory: C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.runs/synth_1
-# Command line: vivado.exe -log topProcessor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topProcessor.tcl
-# Log file: C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.runs/synth_1/topProcessor.vds
-# Journal file: C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.runs/synth_1\vivado.jou
+# Start of session at: Mon Apr 20 17:05:55 2026
+# Process ID: 24560
+# Current directory: C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/synth_1
+# Command line: vivado.exe -log ALU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ALU.tcl
+# Log file: C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/synth_1/ALU.vds
+# Journal file: C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source topProcessor.tcl -notrace
+source ALU.tcl -notrace

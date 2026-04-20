@@ -39,11 +39,7 @@ reg [7:0] memory [0:255];
     // Initialize memory
     initial begin
         // Load from external file
-        // $readmemh("instructions.mem", memory);
-        memory[0] = 8'h93;
-        memory[1] = 8'h00;
-        memory[2] = 8'h50;
-        memory[3] = 8'h00;
+        $readmemh("instructions.mem", memory);
 
     end
 

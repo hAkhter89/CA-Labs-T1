@@ -23,8 +23,7 @@
 module topProcessor(
     input wire clk,
     input wire rst,
-    output wire [15:0] LEDs,
-    output wire dummy
+    output wire [15:0] LEDs
 );
 // PC wires
 wire [31:0] PCout, next, PC4;
@@ -43,6 +42,11 @@ wire zero;
 // Memory wires
 wire [31:0] mem_readData;
 wire [31:0] target; // branch
+
+
+assign PCSrc = Branch & zero;
+assign PC = 0;
+assign next = 0;
 
 // DATA PATH //
 
@@ -154,10 +158,144 @@ immGen imm_gen_inst (
     .instruction(instruction),
     .imm(imm)
 );
+
+
+
 assign LEDs = ALUResult[15:0];
-assign dummy = |ALUResult | |PCout;
-assign PCSrc = Branch & zero;
+//assign dummy = |ALUResult | |PCout;
 
+//module topProcessor(
+//    input wire clk,
+//    input wire rst,
+//    output wire [15:0] LEDs
+//);
 
-endmodule
+//// =====================
+//// PC WIRES
+//// =====================
+//wire [31:0] PCout, PC4, next;
+//wire [31:0] instruction;
+//wire [31:0] target;
+
+//// =====================
+//// CONTROL WIRES
+//// =====================
+//wire Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite;
+//wire [1:0] ALUOp;
+//wire [3:0] ALUctrl;
+//wire zero;
+
+//// =====================
+//// REGISTER WIRES
+//// =====================
+//wire [31:0] imm;
+//wire [31:0] readData1, readData2, writeData;
+
+//// =====================
+//// ALU WIRES
+//// =====================
+//wire [31:0] ALU_B, ALUResult;
+
+//// =====================
+//// PC LOGIC (REAL CPU)
+//// =====================
+
+//assign PC4 = PCout + 32'd4;
+//assign target = PCout + imm;
+
+//assign next = (Branch & zero) ? target : PC4;
+
+//// =====================
+//// PC
+//// =====================
+//PC pc_inst (
+//    .clk(clk),
+//    .rst(rst),
+//    .next(next),
+//    .PCout(PCout)
+//);
+
+//// =====================
+//// INSTRUCTION MEMORY
+//// =====================
+//instructionMemory inst_mem (
+//    .instAddress(PCout),
+//    .instruction(instruction)
+//);
+
+//// =====================
+//// CONTROL UNIT
+//// =====================
+//MainControl main_ctrl_inst (
+//    .opcode(instruction[6:0]),
+//    .RegWrite(RegWrite),
+//    .ALUSrc(ALUSrc),
+//    .MemRead(MemRead),
+//    .MemWrite(MemWrite),
+//    .MemtoReg(MemtoReg),
+//    .Branch(Branch),
+//    .ALUOp(ALUOp)
+//);
+
+//// =====================
+//// REGISTER FILE
+//// =====================
+//Register reg_file_inst (
+//    .clk(clk),
+//    .rst(rst),
+//    .WriteEnable(RegWrite),
+//    .rs1(instruction[19:15]),
+//    .rs2(instruction[24:20]),
+//    .rd(instruction[11:7]),
+//    .WriteData(writeData),
+//    .ReadData1(readData1),
+//    .ReadData2(readData2)
+//);
+
+//// =====================
+//// IMMEDIATE GENERATOR
+//// =====================
+//immGen imm_gen_inst (
+//    .instruction(instruction),
+//    .imm(imm)
+//);
+
+//// =====================
+//// ALU CONTROL
+//// =====================
+//ALUControl alu_ctrl_inst (
+//    .ALUOp(ALUOp),
+//    .funct3(instruction[14:12]),
+//    .funct7(instruction[30]),
+//    .ALUControl(ALUctrl)
+//);
+
+//// =====================
+//// ALU INPUT MUX
+//// =====================
+//assign ALU_B = (ALUSrc) ? imm : readData2;
+
+//// =====================
+//// ALU
+//// =====================
+//ALU alu_inst (
+//    .A(readData1),
+//    .B(ALU_B),
+//    .ALU_control(ALUctrl),
+//    .ALU_result(ALUResult),
+//    .Zero(zero)
+//);
+
+//// =====================
+//// WRITEBACK MUX
+//// =====================
+//assign writeData = (MemtoReg) ? 32'd0 : ALUResult;
+
+//// =====================
+//// LED OUTPUT
+//// =====================
+//assign LEDs = ALUResult[15:0];
+
+//endmodule
+
 // DATAPATH, RTL, TIMING, UTILIZATION

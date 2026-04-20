@@ -17,40 +17,65 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 // 
-//////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 
 module tb_TopLevelProcessor();
 
-    reg clk;
-    reg rst;
-    wire [15:0] LEDs;
-    
-    topProcessor uut (
-        .clk(clk),
-        .rst(rst),
-        .LEDs(LEDs)
+reg clk;
+reg rst;
+wire [15:0] LEDs;
+
+// DUT
+topProcessor uut (
+    .clk(clk),
+    .rst(rst),
+    .LEDs(LEDs)
+);
+
+// =========================
+// CLOCK (10ns period)
+// =========================
+always #5 clk = ~clk;
+
+// =========================
+// RESET (safe + synced)
+// =========================
+initial begin
+    clk = 0;
+    rst = 1;
+
+    // hold reset for 2 clock cycles
+    repeat (2) @(posedge clk);
+    rst = 0;
+end
+
+// =========================
+// MONITOR (debug view)
+// =========================
+initial begin
+    $display("Time | PC | Instr | imm | rs1 | rs2 | ALU_B | ALURes | LEDs");
+    $monitor("%0t | %0d | %h | %0d | %0d | %0d | %0d | %0d | %0d",
+        $time,
+        uut.PCout,
+        uut.instruction,
+        uut.imm,
+        uut.readData1,
+        uut.readData2,
+        uut.ALU_B,
+        uut.ALUResult,
+        LEDs
     );
-    
-    always #5 clk = ~clk;
-    
-    initial begin
-        clk = 0;
-        rst = 1;
-        #20;
-        rst = 0;
-        #1000;
-        $finish;
-    end
-    
-    initial begin
-        $monitor("Time=%0t | PC=%0d | Instruction=%h | ALUResult=%0d | LEDs=%b",
-                  $time,
-                  uut.PCout,
-                  uut.instruction,
-                  uut.ALUResult,
-                  LEDs);
-    end
+end
+
+// =========================
+// STOP SIMULATION
+// =========================
+initial begin
+    #100;
+    $finish;
+end
 
 endmodule
