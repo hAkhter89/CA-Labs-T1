@@ -1,80 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1776614789">
-  <File Type="BITSTR-BMM" Name="topProcessor_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="topProcessor_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="topProcessor_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="topProcessor_power_routed.rpt"/>
   <File Type="PA-TCL" Name="topProcessor.tcl"/>
-  <File Type="OPT-TIMING" Name="topProcessor_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="topProcessor_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="topProcessor_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="topProcessor_reports.tcl"/>
-  <File Type="OPT-DRC" Name="topProcessor_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="topProcessor.hwdef"/>
-  <File Type="PWROPT-DCP" Name="topProcessor_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="topProcessor_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="topProcessor_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="topProcessor_placed.dcp"/>
-  <File Type="PLACE-IO" Name="topProcessor_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="topProcessor_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="topProcessor_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="topProcessor_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="topProcessor_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="topProcessor_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="topProcessor_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="topProcessor_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="topProcessor_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="topProcessor.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="topProcessor_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="topProcessor_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="topProcessor_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="topProcessor.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="topProcessor_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="topProcessor_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="topProcessor_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="topProcessor_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="topProcessor_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="topProcessor_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="topProcessor_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="topProcessor.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="topProcessor_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="topProcessor_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="topProcessor_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="topProcessor_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="topProcessor_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="topProcessor_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="topProcessor_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="topProcessor_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="topProcessor_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="topProcessor_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="topProcessor_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="topProcessor_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="topProcessor_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="topProcessor_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="topProcessor_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="topProcessor_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="topProcessor_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="topProcessor_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="topProcessor_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="topProcessor_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="topProcessor_bus_skew_postroute_physopted.pb"/>
+  <File Type="RDI-RDI" Name="topProcessor.vdi"/>
   <File Type="BG-BIT" Name="topProcessor.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="topProcessor_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-DRC" Name="topProcessor.drc"/>
+  <File Type="BG-BGN" Name="topProcessor.bgn"/>
+  <File Type="BG-BIN" Name="topProcessor.bin"/>
   <File Type="BITSTR-RBT" Name="topProcessor.rbt"/>
   <File Type="BITSTR-NKY" Name="topProcessor.nky"/>
+  <File Type="BITSTR-BMM" Name="topProcessor_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="topProcessor.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="topProcessor.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="topProcessor.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-HWDEF" Name="topProcessor.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="topProcessor_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="topProcessor_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="topProcessor_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="topProcessor_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="topProcessor_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="topProcessor_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="topProcessor_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="topProcessor_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="topProcessor_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="topProcessor_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="topProcessor_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="topProcessor_postroute_physopt_bb.dcp"/>
   <File Type="PDI-FILE" Name="topProcessor.pdi"/>
   <File Type="RCFI_FILE" Name="topProcessor.rcfi"/>
   <File Type="CFI_FILE" Name="topProcessor.cfi"/>
   <File Type="RNPI_FILE" Name="topProcessor.rnpi"/>
   <File Type="NPI_FILE" Name="topProcessor.npi"/>
   <File Type="RBD_FILE" Name="topProcessor.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="topProcessor.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="topProcessor.sysdef"/>
-  <File Type="BG-BGN" Name="topProcessor.bgn"/>
-  <File Type="BG-DRC" Name="topProcessor.drc"/>
-  <File Type="RDI-RDI" Name="topProcessor.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/2_MUX.v">
@@ -196,5 +156,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

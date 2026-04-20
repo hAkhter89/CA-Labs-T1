@@ -99,4 +99,4 @@ Time=955000 | PC=376 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxx
 Time=965000 | PC=380 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
 Time=975000 | PC=384 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
 Time=985000 | PC=388 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
-Time=995000 | PC=392 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=995000 | PC=392 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxx

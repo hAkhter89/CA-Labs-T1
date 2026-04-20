@@ -8,7 +8,7 @@ C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/2_MUX.v,1776428
 C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALU.v,1776428073,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALUControl.v,,ALU,,,,,,,,
 C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALUControl.v,1776428073,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/BranchAdd.v,,ALUControl,,,,,,,,
 C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/BranchAdd.v,1776428073,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/DataMemory.v,,BranchAdd,,,,,,,,
-C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/DataMemory.v,1776428073,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/InstructionMemory.v,,DataMemory,,,,,,,,
+C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/DataMemory.v,1776676237,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/InstructionMemory.v,,DataMemory,,,,,,,,
 C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/InstructionMemory.v,1776613766,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/MainControl.v,,instructionMemory,,,,,,,,
 C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/MainControl.v,1776428073,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PC.v,,MainControl,,,,,,,,
 C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PC.v,1776428073,verilog,,C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PCAdder.v,,PC,,,,,,,,
