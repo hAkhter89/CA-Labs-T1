@@ -19,11 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-module DataMemory (
-=======
 module DataMemory(
->>>>>>> d8c280549a97080a210842dd84da9fc0bcc1f054
     input  wire        clk,
     input  wire        MemWrite,
     input  wire        MemRead,
