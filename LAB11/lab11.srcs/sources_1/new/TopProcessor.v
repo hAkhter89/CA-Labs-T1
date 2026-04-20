@@ -22,7 +22,9 @@
 
 module topProcessor(
     input wire clk,
-    input wire rst
+    input wire rst,
+    output wire [15:0] LEDs,
+    output wire dummy
 );
 // PC wires
 wire [31:0] PCout, next, PC4;
@@ -42,24 +44,118 @@ wire zero;
 wire [31:0] mem_readData;
 wire [31:0] target; // branch
 
-
-
 // DATA PATH //
 
 // ALU
-// REGISTERFILE
-// DATAMEMORY 
-// MAINCONTROL
-// ALUCONTROL
-// INSTRUCTIONMEMORY
-// ALU_MUX
-// PC
-// PCAdder
-// BranchAdd
-// BranchMUX
-// MEMtoREG_MUX
-// immGen
+ALU alu_inst (
+    .A(readData1),
+    .B(ALU_B),
+    .ALU_control(ALUctrl),
+    .ALU_result(ALUResult),
+    .Zero(zero)
+);
 
+// REGISTERFILE
+Register reg_file_inst (
+    .clk(clk),
+    .rst(rst),
+    .WriteEnable(RegWrite),
+    .rs1(instruction[19:15]),
+    .rs2(instruction[24:20]),
+    .rd(instruction[11:7]),
+    .WriteData(writeData),
+    .ReadData1(readData1),
+    .ReadData2(readData2)
+);
+
+// DATAMEMORY
+DataMemory data_mem_inst (
+    .clk(clk),
+    .MemWrite(MemWrite),
+    .MemRead(MemRead),
+    .address(ALUResult[8:0]),
+    .write_data(readData2),
+    .read_data(mem_readData)
+);
+
+// MAINCONTROL
+MainControl main_ctrl_inst (
+    .opcode(instruction[6:0]),
+    .RegWrite(RegWrite),
+    .ALUSrc(ALUSrc),
+    .MemRead(MemRead),
+    .MemWrite(MemWrite),
+    .MemtoReg(MemtoReg),
+    .Branch(Branch),
+    .ALUOp(ALUOp)
+);
+
+// ALUCONTROL
+ALUControl alu_ctrl_inst (
+    .ALUOp(ALUOp),
+    .funct3(instruction[14:12]),
+    .funct7(instruction[30]),
+    .ALUControl(ALUctrl)
+);
+
+// INSTRUCTIONMEMORY
+instructionMemory inst_mem (
+    .instAddress(PCout),
+    .instruction(instruction)
+);
+
+// ALU_MUX
+branch_MUX alu_mux_inst (
+    .in1(readData2),
+    .in2(imm),
+    .select(ALUSrc),
+    .out(ALU_B)
+);
+
+// PC
+PC pc_inst (
+    .clk(clk),
+    .rst(rst),
+    .next(next),
+    .PCout(PCout)
+);
+
+// PCAdder
+PCAdder pc_adder_inst (
+    .PCout(PCout),
+    .PC4(PC4)
+);
+
+// BranchAdd
+BranchAdd branch_add_inst (
+    .PCout(PCout),
+    .imm(imm),
+    .target(target)
+);
+
+// BranchMUX
+branch_MUX branch_mux_inst (
+    .in1(PC4),
+    .in2(target),
+    .select(PCSrc),
+    .out(next)
+);
+
+// MEMtoREG_MUX
+branch_MUX memtoreg_mux_inst (
+    .in1(ALUResult),
+    .in2(mem_readData),
+    .select(MemtoReg),
+    .out(writeData)
+);
+
+// immGen
+immGen imm_gen_inst (
+    .instruction(instruction),
+    .imm(imm)
+);
+assign LEDs = ALUResult[15:0];
+assign dummy = |ALUResult | |PCout;
 assign PCSrc = Branch & zero;
 
 endmodule
