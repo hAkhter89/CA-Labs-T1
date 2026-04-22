@@ -45,8 +45,6 @@ wire [31:0] target; // branch
 
 
 assign PCSrc = Branch & zero;
-assign PC = 0;
-assign next = 0;
 
 // DATA PATH //
 
@@ -162,6 +160,7 @@ immGen imm_gen_inst (
 
 
 assign LEDs = ALUResult[15:0];
+endmodule
 //assign dummy = |ALUResult | |PCout;
 
 //module topProcessor(
@@ -298,4 +297,4 @@ assign LEDs = ALUResult[15:0];
 
 //endmodule
 
-// DATAPATH, RTL, TIMING, UTILIZATION
+

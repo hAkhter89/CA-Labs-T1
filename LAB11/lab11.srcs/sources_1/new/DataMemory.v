@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+// funct3 depending on the size of the data.
 module DataMemory(
     input  wire        clk,
     input  wire        MemWrite,

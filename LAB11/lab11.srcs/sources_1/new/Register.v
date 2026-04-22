@@ -44,6 +44,11 @@ always @(posedge clk or posedge rst) begin
     else if (WriteEnable && rd != 5'b00000) begin
         registers[rd] <= WriteData;
     end
+    
+    else begin
+        registers[rd] <= registers[rd];
+      
+    end
 end
 
 assign ReadData1 = (rs1 == 5'b00000) ? 32'b0 : registers[rs1];

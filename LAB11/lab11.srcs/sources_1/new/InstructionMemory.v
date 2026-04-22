@@ -30,10 +30,10 @@ module instructionMemory#(
 reg [7:0] memory [0:255];
 
     always @(*) begin
-        instruction = { memory[instAddress + 3],
-                        memory[instAddress + 2],
+        instruction = { memory[instAddress],
                         memory[instAddress + 1],
-                        memory[instAddress + 0] }; // LITTLE END-IAN FORMAT
+                        memory[instAddress + 2],
+                        memory[instAddress + 3] }; // LITTLE END-IAN FORMAT
     end
 
     // Initialize memory
