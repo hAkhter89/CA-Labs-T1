@@ -1,0 +1,173 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Apr 20 15:36:35 2026
+# Process ID: 18940
+# Current directory: C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16776 C:\Users\ha10609\Downloads\CA-Labs-T1\LAB11\lab11.xpr
+# Log file: C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/vivado.log
+# Journal file: C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 7
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top topProcessor [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 7
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_TopLevelProcessor [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 7
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/LAB11/lab11.runs/impl_1/topProcessor.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+launch_simulation
+source tb_TopLevelProcessor.tcl
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+current_wave_config {Untitled 12}
+add_wave {{/tb_TopLevelProcessor/uut/clk}} {{/tb_TopLevelProcessor/uut/rst}} {{/tb_TopLevelProcessor/uut/LEDs}} {{/tb_TopLevelProcessor/uut/PCout}} {{/tb_TopLevelProcessor/uut/PC4}} {{/tb_TopLevelProcessor/uut/next}} {{/tb_TopLevelProcessor/uut/instruction}} {{/tb_TopLevelProcessor/uut/target}} {{/tb_TopLevelProcessor/uut/Branch}} {{/tb_TopLevelProcessor/uut/MemRead}} {{/tb_TopLevelProcessor/uut/MemtoReg}} {{/tb_TopLevelProcessor/uut/MemWrite}} {{/tb_TopLevelProcessor/uut/ALUSrc}} {{/tb_TopLevelProcessor/uut/RegWrite}} {{/tb_TopLevelProcessor/uut/ALUOp}} {{/tb_TopLevelProcessor/uut/ALUctrl}} {{/tb_TopLevelProcessor/uut/zero}} {{/tb_TopLevelProcessor/uut/imm}} {{/tb_TopLevelProcessor/uut/readData1}} {{/tb_TopLevelProcessor/uut/readData2}} {{/tb_TopLevelProcessor/uut/writeData}} {{/tb_TopLevelProcessor/uut/ALU_B}} {{/tb_TopLevelProcessor/uut/ALUResult}} 
+relaunch_sim
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+wait_on_run synth_1
+close_sim
+launch_simulation
+source tb_TopLevelProcessor.tcl
+close_sim

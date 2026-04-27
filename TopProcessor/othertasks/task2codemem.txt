@@ -1,0 +1,63 @@
+# ============================================
+# TASK 2 - Testing BLT, JAL, LUI instructions
+# ============================================
+
+# Test 1: LUI
+# Load upper immediate 0x12345 into x1
+# Expected: x1 = 0x12345000
+lui x1, 0x12345
+
+# Test 2: BLT (Branch if Less Than)
+# x2 = 3, x3 = 7
+# blt checks if x2 < x3, if true branch to 'taken'
+addi x2, x0, 3
+addi x3, x0, 7
+blt  x2, x3, taken      # 3 < 7 = true, branch taken
+addi x4, x0, 55         # SKIPPED
+taken:
+addi x4, x0, 99         # x4 = 99
+
+# Test 3: JAL (Jump and Link)
+# Jumps to 'target', saves return address in x5
+# Expected: x5 = PC+4, x6 = 42
+jal  x5, target          # jump to target, x5 = return address
+addi x6, x0, 0          # SKIPPED
+target:
+addi x6, x0, 42         # x6 = 42
+
+12
+34
+50
+B7
+00
+30
+01
+13
+00
+70
+01
+93
+00
+31
+C4
+63
+03
+70
+02
+13
+06
+30
+02
+13
+00
+80
+02
+EF
+00
+00
+03
+13
+02
+A0
+03
+13

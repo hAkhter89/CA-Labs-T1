@@ -1,0 +1,830 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Apr 19 20:38:24 2026
+# Process ID: 11472
+# Current directory: C:/Users/tau/Documents/Labs-CA-T1/LAB11
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16692 C:\Users\tau\Documents\Labs-CA-T1\LAB11\lab11.xpr
+# Log file: C:/Users/tau/Documents/Labs-CA-T1/LAB11/vivado.log
+# Journal file: C:/Users/tau/Documents/Labs-CA-T1/LAB11\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_TopLevelProcessor' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_TopLevelProcessor_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xelab -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_TopLevelProcessor_behav -key {Behavioral:sim_1:Functional:tb_TopLevelProcessor} -tclbatch {tb_TopLevelProcessor.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_TopLevelProcessor.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 | PC=x | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=5000 | PC=0 | LEDs=0000000000000000 | LEDs_decimal=0
+Time=25000 | PC=4 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=35000 | PC=8 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=45000 | PC=12 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=55000 | PC=16 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=65000 | PC=20 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=75000 | PC=24 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=85000 | PC=28 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=95000 | PC=32 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=105000 | PC=36 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=115000 | PC=40 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=125000 | PC=44 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=135000 | PC=48 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=145000 | PC=52 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=155000 | PC=56 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=165000 | PC=60 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=175000 | PC=64 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=185000 | PC=68 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=195000 | PC=72 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=205000 | PC=76 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=215000 | PC=80 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=225000 | PC=84 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=235000 | PC=88 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=245000 | PC=92 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=255000 | PC=96 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=265000 | PC=100 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=275000 | PC=104 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=285000 | PC=108 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=295000 | PC=112 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=305000 | PC=116 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=315000 | PC=120 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=325000 | PC=124 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=335000 | PC=128 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=345000 | PC=132 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=355000 | PC=136 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=365000 | PC=140 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=375000 | PC=144 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=385000 | PC=148 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=395000 | PC=152 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=405000 | PC=156 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=415000 | PC=160 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=425000 | PC=164 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=435000 | PC=168 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=445000 | PC=172 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=455000 | PC=176 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=465000 | PC=180 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=475000 | PC=184 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=485000 | PC=188 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=495000 | PC=192 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=505000 | PC=196 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=515000 | PC=200 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=525000 | PC=204 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=535000 | PC=208 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=545000 | PC=212 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=555000 | PC=216 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=565000 | PC=220 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=575000 | PC=224 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=585000 | PC=228 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=595000 | PC=232 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=605000 | PC=236 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=615000 | PC=240 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=625000 | PC=244 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=635000 | PC=248 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=645000 | PC=252 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=655000 | PC=256 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=665000 | PC=260 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=675000 | PC=264 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=685000 | PC=268 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=695000 | PC=272 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=705000 | PC=276 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=715000 | PC=280 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=725000 | PC=284 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=735000 | PC=288 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=745000 | PC=292 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=755000 | PC=296 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=765000 | PC=300 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=775000 | PC=304 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=785000 | PC=308 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=795000 | PC=312 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=805000 | PC=316 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=815000 | PC=320 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=825000 | PC=324 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=835000 | PC=328 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=845000 | PC=332 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=855000 | PC=336 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=865000 | PC=340 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=875000 | PC=344 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=885000 | PC=348 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=895000 | PC=352 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=905000 | PC=356 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=915000 | PC=360 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=925000 | PC=364 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=935000 | PC=368 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=945000 | PC=372 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=955000 | PC=376 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=965000 | PC=380 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=975000 | PC=384 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=985000 | PC=388 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=995000 | PC=392 | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_TopLevelProcessor_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1029.746 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_TopLevelProcessor' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_TopLevelProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/2_MUX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module branch_MUX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALUControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/BranchAdd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchAdd
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/InstructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instructionMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/MainControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MainControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/TopProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module topProcessor
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/immGen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module immGen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sim_1/new/toptb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_TopLevelProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xelab -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.DataMemory
+Compiling module xil_defaultlib.MainControl
+Compiling module xil_defaultlib.ALUControl
+Compiling module xil_defaultlib.instructionMemory
+Compiling module xil_defaultlib.branch_MUX
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.PCAdder
+Compiling module xil_defaultlib.BranchAdd
+Compiling module xil_defaultlib.immGen
+Compiling module xil_defaultlib.topProcessor
+Compiling module xil_defaultlib.tb_TopLevelProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_TopLevelProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_TopLevelProcessor_behav -key {Behavioral:sim_1:Functional:tb_TopLevelProcessor} -tclbatch {tb_TopLevelProcessor.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_TopLevelProcessor.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 | PC=x | LEDs=xxxxxxxxxxxxxxxx | LEDs_decimal=x
+Time=25000 | PC=0 | LEDs=0000000000000000 | LEDs_decimal=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_TopLevelProcessor_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1029.746 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_TopLevelProcessor' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_TopLevelProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sim_1/new/toptb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_TopLevelProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xelab -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <TopLevelProcessor> not found while processing module instance <uut> [C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sim_1/new/toptb.v:30]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_TopLevelProcessor' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_TopLevelProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/2_MUX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module branch_MUX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALUControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/BranchAdd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchAdd
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/InstructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instructionMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/MainControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MainControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/TopProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module topProcessor
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/immGen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module immGen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sim_1/new/toptb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_TopLevelProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xelab -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.DataMemory
+Compiling module xil_defaultlib.MainControl
+Compiling module xil_defaultlib.ALUControl
+Compiling module xil_defaultlib.instructionMemory
+Compiling module xil_defaultlib.branch_MUX
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.PCAdder
+Compiling module xil_defaultlib.BranchAdd
+Compiling module xil_defaultlib.immGen
+Compiling module xil_defaultlib.topProcessor
+Compiling module xil_defaultlib.tb_TopLevelProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_TopLevelProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_TopLevelProcessor_behav -key {Behavioral:sim_1:Functional:tb_TopLevelProcessor} -tclbatch {tb_TopLevelProcessor.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_TopLevelProcessor.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 | PC=x | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=5000 | PC=0 | Instruction=00500093 | ALUResult=0 | LEDs=0000000000000000
+Time=25000 | PC=4 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=35000 | PC=8 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=45000 | PC=12 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=55000 | PC=16 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=65000 | PC=20 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=75000 | PC=24 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=85000 | PC=28 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=95000 | PC=32 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=105000 | PC=36 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=115000 | PC=40 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=125000 | PC=44 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=135000 | PC=48 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=145000 | PC=52 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=155000 | PC=56 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=165000 | PC=60 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=175000 | PC=64 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=185000 | PC=68 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=195000 | PC=72 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=205000 | PC=76 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=215000 | PC=80 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=225000 | PC=84 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=235000 | PC=88 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=245000 | PC=92 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=255000 | PC=96 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=265000 | PC=100 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=275000 | PC=104 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=285000 | PC=108 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=295000 | PC=112 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=305000 | PC=116 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=315000 | PC=120 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=325000 | PC=124 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=335000 | PC=128 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=345000 | PC=132 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=355000 | PC=136 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=365000 | PC=140 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=375000 | PC=144 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=385000 | PC=148 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=395000 | PC=152 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=405000 | PC=156 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=415000 | PC=160 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=425000 | PC=164 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=435000 | PC=168 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=445000 | PC=172 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=455000 | PC=176 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=465000 | PC=180 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=475000 | PC=184 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=485000 | PC=188 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=495000 | PC=192 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=505000 | PC=196 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=515000 | PC=200 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=525000 | PC=204 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=535000 | PC=208 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=545000 | PC=212 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=555000 | PC=216 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=565000 | PC=220 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=575000 | PC=224 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=585000 | PC=228 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=595000 | PC=232 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=605000 | PC=236 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=615000 | PC=240 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=625000 | PC=244 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=635000 | PC=248 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=645000 | PC=252 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=655000 | PC=256 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=665000 | PC=260 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=675000 | PC=264 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=685000 | PC=268 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=695000 | PC=272 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=705000 | PC=276 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=715000 | PC=280 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=725000 | PC=284 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=735000 | PC=288 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=745000 | PC=292 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=755000 | PC=296 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=765000 | PC=300 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=775000 | PC=304 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=785000 | PC=308 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=795000 | PC=312 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=805000 | PC=316 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=815000 | PC=320 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=825000 | PC=324 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=835000 | PC=328 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=845000 | PC=332 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=855000 | PC=336 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=865000 | PC=340 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=875000 | PC=344 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=885000 | PC=348 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=895000 | PC=352 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=905000 | PC=356 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=915000 | PC=360 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=925000 | PC=364 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=935000 | PC=368 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=945000 | PC=372 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=955000 | PC=376 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=965000 | PC=380 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=975000 | PC=384 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=985000 | PC=388 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=995000 | PC=392 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_TopLevelProcessor_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1029.746 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_TopLevelProcessor' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_TopLevelProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/2_MUX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module branch_MUX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/ALUControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/BranchAdd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchAdd
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/InstructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instructionMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/MainControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MainControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/TopProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module topProcessor
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sources_1/new/immGen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module immGen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.srcs/sim_1/new/toptb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_TopLevelProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xelab -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.DataMemory
+Compiling module xil_defaultlib.MainControl
+Compiling module xil_defaultlib.ALUControl
+Compiling module xil_defaultlib.instructionMemory
+Compiling module xil_defaultlib.branch_MUX
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.PCAdder
+Compiling module xil_defaultlib.BranchAdd
+Compiling module xil_defaultlib.immGen
+Compiling module xil_defaultlib.topProcessor
+Compiling module xil_defaultlib.tb_TopLevelProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_TopLevelProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_TopLevelProcessor_behav -key {Behavioral:sim_1:Functional:tb_TopLevelProcessor} -tclbatch {tb_TopLevelProcessor.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_TopLevelProcessor.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 | PC=x | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=5000 | PC=0 | Instruction=00500093 | ALUResult=0 | LEDs=0000000000000000
+Time=25000 | PC=4 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=35000 | PC=8 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=45000 | PC=12 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=55000 | PC=16 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=65000 | PC=20 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=75000 | PC=24 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=85000 | PC=28 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=95000 | PC=32 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=105000 | PC=36 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=115000 | PC=40 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=125000 | PC=44 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=135000 | PC=48 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=145000 | PC=52 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=155000 | PC=56 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=165000 | PC=60 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=175000 | PC=64 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=185000 | PC=68 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=195000 | PC=72 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=205000 | PC=76 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=215000 | PC=80 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=225000 | PC=84 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=235000 | PC=88 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=245000 | PC=92 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=255000 | PC=96 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=265000 | PC=100 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=275000 | PC=104 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=285000 | PC=108 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=295000 | PC=112 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=305000 | PC=116 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=315000 | PC=120 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=325000 | PC=124 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=335000 | PC=128 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=345000 | PC=132 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=355000 | PC=136 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=365000 | PC=140 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=375000 | PC=144 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=385000 | PC=148 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=395000 | PC=152 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=405000 | PC=156 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=415000 | PC=160 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=425000 | PC=164 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=435000 | PC=168 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=445000 | PC=172 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=455000 | PC=176 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=465000 | PC=180 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=475000 | PC=184 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=485000 | PC=188 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=495000 | PC=192 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=505000 | PC=196 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=515000 | PC=200 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=525000 | PC=204 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=535000 | PC=208 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=545000 | PC=212 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=555000 | PC=216 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=565000 | PC=220 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=575000 | PC=224 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=585000 | PC=228 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=595000 | PC=232 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=605000 | PC=236 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=615000 | PC=240 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=625000 | PC=244 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=635000 | PC=248 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=645000 | PC=252 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=655000 | PC=256 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=665000 | PC=260 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=675000 | PC=264 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=685000 | PC=268 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=695000 | PC=272 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=705000 | PC=276 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=715000 | PC=280 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=725000 | PC=284 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=735000 | PC=288 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=745000 | PC=292 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=755000 | PC=296 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=765000 | PC=300 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=775000 | PC=304 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=785000 | PC=308 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=795000 | PC=312 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=805000 | PC=316 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=815000 | PC=320 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=825000 | PC=324 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=835000 | PC=328 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=845000 | PC=332 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=855000 | PC=336 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=865000 | PC=340 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=875000 | PC=344 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=885000 | PC=348 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=895000 | PC=352 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=905000 | PC=356 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=915000 | PC=360 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=925000 | PC=364 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=935000 | PC=368 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=945000 | PC=372 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=955000 | PC=376 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=965000 | PC=380 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=975000 | PC=384 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=985000 | PC=388 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=995000 | PC=392 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_TopLevelProcessor_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1029.746 ; gain = 0.000
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.runs/synth_1
+
+launch_runs synth_1 -jobs 6
+[Sun Apr 19 20:49:50 2026] Launched synth_1...
+Run output will be captured here: C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_TopLevelProcessor' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim/instructions.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_TopLevelProcessor_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+"xelab -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto f8d01134f7dc4a89acf0d8e4e2a22205 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_TopLevelProcessor_behav xil_defaultlib.tb_TopLevelProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tau/Documents/Labs-CA-T1/LAB11/lab11.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_TopLevelProcessor_behav -key {Behavioral:sim_1:Functional:tb_TopLevelProcessor} -tclbatch {tb_TopLevelProcessor.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_TopLevelProcessor.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 | PC=x | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=5000 | PC=0 | Instruction=00500093 | ALUResult=0 | LEDs=0000000000000000
+Time=25000 | PC=4 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=35000 | PC=8 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=45000 | PC=12 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=55000 | PC=16 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=65000 | PC=20 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=75000 | PC=24 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=85000 | PC=28 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=95000 | PC=32 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=105000 | PC=36 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=115000 | PC=40 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=125000 | PC=44 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=135000 | PC=48 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=145000 | PC=52 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=155000 | PC=56 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=165000 | PC=60 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=175000 | PC=64 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=185000 | PC=68 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=195000 | PC=72 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=205000 | PC=76 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=215000 | PC=80 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=225000 | PC=84 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=235000 | PC=88 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=245000 | PC=92 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=255000 | PC=96 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=265000 | PC=100 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=275000 | PC=104 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=285000 | PC=108 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=295000 | PC=112 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=305000 | PC=116 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=315000 | PC=120 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=325000 | PC=124 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=335000 | PC=128 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=345000 | PC=132 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=355000 | PC=136 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=365000 | PC=140 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=375000 | PC=144 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=385000 | PC=148 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=395000 | PC=152 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=405000 | PC=156 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=415000 | PC=160 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=425000 | PC=164 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=435000 | PC=168 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=445000 | PC=172 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=455000 | PC=176 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=465000 | PC=180 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=475000 | PC=184 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=485000 | PC=188 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=495000 | PC=192 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=505000 | PC=196 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=515000 | PC=200 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=525000 | PC=204 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=535000 | PC=208 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=545000 | PC=212 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=555000 | PC=216 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=565000 | PC=220 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=575000 | PC=224 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=585000 | PC=228 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=595000 | PC=232 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=605000 | PC=236 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=615000 | PC=240 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=625000 | PC=244 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=635000 | PC=248 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=645000 | PC=252 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=655000 | PC=256 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=665000 | PC=260 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=675000 | PC=264 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=685000 | PC=268 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=695000 | PC=272 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=705000 | PC=276 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=715000 | PC=280 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=725000 | PC=284 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=735000 | PC=288 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=745000 | PC=292 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=755000 | PC=296 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=765000 | PC=300 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=775000 | PC=304 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=785000 | PC=308 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=795000 | PC=312 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=805000 | PC=316 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=815000 | PC=320 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=825000 | PC=324 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=835000 | PC=328 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=845000 | PC=332 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=855000 | PC=336 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=865000 | PC=340 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=875000 | PC=344 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=885000 | PC=348 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=895000 | PC=352 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=905000 | PC=356 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=915000 | PC=360 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=925000 | PC=364 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=935000 | PC=368 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=945000 | PC=372 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=955000 | PC=376 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=965000 | PC=380 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=975000 | PC=384 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=985000 | PC=388 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+Time=995000 | PC=392 | Instruction=xxxxxxxx | ALUResult=x | LEDs=xxxxxxxxxxxxxxxx
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_TopLevelProcessor_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1029.746 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 19 20:51:51 2026...

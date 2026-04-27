@@ -1,0 +1,62 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+0	| 123450b7	| 11	| 1000		| 1		| 12345000	| 12345000	| 12345000		| 12345000		| 12345000			| 1
+=== TASK 2 DEBUG ===
+PC	| inst		| ALUOp	| ALUctrl	| ALUSrc	| imm		| ALU_B		| ALUResult	| writeData	| writeData_final	| RegWrite
+-----------------------------------------------------------------------
+4	| 00300113	| 10	| 0010		| 1		| 00000003	| 00000003	| 00000003		| 00000003		| 00000003			| 1
+8	| 00700193	| 10	| 0010		| 1		| 00000007	| 00000007	| 00000007		| 00000007		| 00000007			| 1
+12	| 0031c463	| 01	| 0110		| 0		| 00000008	| 00000007	| 00000000		| 00000000		| 00000000			| 0
+20	| 06300213	| 10	| 0010		| 1		| 00000063	| 00000063	| 00000063		| 00000063		| 00000063			| 1
+24	| 008002ef	| 00	| 0010		| 0		| 00000008	| 00000000	| 00000000		| 00000000		| 0000001c			| 1
+32	| 02a00313	| 10	| 0010		| 1		| 0000002a	| 0000002a	| 0000002a		| 0000002a		| 0000002a			| 1
+36	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+40	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+
+=== RESULTS ===
+LUI  PASS: x1 = 0x12345000 (expected 0x12345000)
+BLT  PASS: x4 = 99 (expected 99)
+JAL  PASS: x6 = 42 (expected 42)
+===============
+44	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+48	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+52	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+56	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+60	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+64	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+68	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+72	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+76	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+80	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+84	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+88	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+92	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+96	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+100	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+104	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+108	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+112	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+116	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+120	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+124	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+128	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+132	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+136	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+140	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+144	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+148	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+152	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+156	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+160	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+164	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+168	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+172	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+176	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+180	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+184	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+188	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+192	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+196	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+200	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+204	| xxxxxxxx	| 00	| 0010		| 0		| 00000000	| xxxxxxxx	| xxxxxxxx		| xxxxxxxx		| xxxxxxxx			| 0
+$finish called at time : 520 ns : File "C:/Users/tau/Documents/CA-Labs-T1/LAB11/lab11.srcs/sim_1/new/task2_tb.v" Line 45
