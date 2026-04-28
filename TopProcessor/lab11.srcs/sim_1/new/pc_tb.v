@@ -19,56 +19,104 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns / 1ps
 
-module pc_tb();
+module tb_countdown();
+    reg clk;
+    reg rst;
+    wire [15:0] LEDs;
+    wire [6:0] seg;
+    wire [3:0] an;
+    wire dp;
+    
+    topProcessor uut (
+        .clk(clk),
+        .rst(rst),
+        .LEDs(LEDs),
+        .seg(seg),
+        .an(an),
+        .dp(dp)
+    );
+    
+    always #5 clk = ~clk;
+    
+    initial begin
+        $readmemh("instructions_task1.mem", uut.inst_mem.memory);
+        clk = 0;
+        rst = 1;
+        #20;
+        rst = 0;
+        #2000;
+        $finish;
+    end
 
-reg clk;
-reg rst;
-reg PCSrc;
-reg [31:0] instruction;
+    // General monitor
+    always @(posedge clk) begin
+        if (rst == 0) begin
+            $display("Time=%0t | PC=%0d | inst=%h | state(x10)=%0d | x2=%0d | x1=%0d | LEDs=%b | ALUResult=%h | MemWrite=%b | address=%h | write_data=%h",
+                $time,
+                uut.PCout,
+                uut.instruction,
+                uut.reg_file_inst.registers[10],
+                uut.reg_file_inst.registers[2],
+                uut.reg_file_inst.registers[1],
+                LEDs,
+                uut.ALUResult,
+                uut.MemWrite,
+                uut.ALUResult,
+                uut.readData2
+            );
+        end
+    end
 
-wire [31:0] PCout, PC4, imm, target, next;
+    // Branch monitor
+    always @(posedge clk) begin
+        if (rst == 0) begin
+            if (uut.instruction[6:0] == 7'b1100011) begin
+                $display("BRANCH | PC=%0d | inst=%h | funct3=%b | rs1=x%0d | rs2=x%0d | imm=%0d | ALUResult=%h | zero=%b | BLT_taken=%b | PCSrc=%b | next_PC=%0d",
+                    uut.PCout,
+                    uut.instruction,
+                    uut.instruction[14:12],
+                    uut.instruction[19:15],
+                    uut.instruction[24:20],
+                    $signed(uut.imm),
+                    uut.ALUResult,
+                    uut.zero,
+                    uut.BLT_taken,
+                    uut.PCSrc,
+                    uut.next);
+            end
+        end
+    end
 
-PC u_PC (.clk(clk), .rst(rst), .next(next), .PCout(PCout));
-PCAdder u_pcAdd (.PCout(PCout), .PC4(PC4));
-immGen u_immGen (.instruction(instruction), .imm(imm));
+    // Checks
+    initial begin
+        #120;
+        $display("");
+        $display("=== AFTER INIT ===");
+        $display("state(x10) = %0d (expected 0)", 
+                  uut.reg_file_inst.registers[10]);
+        $display("x2 = %0d (expected 5)", 
+                  uut.reg_file_inst.registers[2]);
+        $display("memory[4] = %0d (expected 5)", 
+                  uut.data_mem_inst.memory[4]);
 
-BranchAdd u_brAdd (.PCout(PCout), .imm(imm), .target(target));
-branch_MUX u_pcmux (.in1(PC4), .in2(target), .select(PCSrc),
-                       .out(next));
+        #200;
+        $display("");
+        $display("=== AFTER INPUT STATE ===");
+        $display("state(x10) = %0d (expected 1 = COUNTDOWN)", 
+                  uut.reg_file_inst.registers[10]);
+        $display("x2 = %0d (expected 5)", 
+                  uut.reg_file_inst.registers[2]);
 
-// Clock Generation
-always #5 clk = ~clk;
-
-initial begin
-    // Initialize
-    clk = 0;
-    rst = 1;
-    PCSrc = 0;
-    instruction = 32'd0;
-
-    #10;
-    rst = 0; // Release reset, PC should be 0
-
-    // TEST 1: Sequential PC+4 updates
-    #10; // PC becomes 4
-    #10; // PC becomes 8
-
-    // TEST 2: I-Type Immediate Generation (ADDI x5, x5, -1) -> 0xfff28293
-    instruction = 32'hfff28293;
-    #10; // PC becomes 12, imm should be 0xFFFFFFFF (-1)
-
-    // TEST 3: Branch Target Update (BEQ - Branch backward by -4 bytes)
-    // BEQ instruction generating an unshifted -2 offset.
-    // immGen should output 0xFFFFFFFE (-2). branch_adder shifts to -4.
-    instruction = 32'hfe000ce3;
-    PCSrc = 1; // Trigger the branch
-    #10; // PC should update to (12 - 4) = 8
-
-    PCSrc = 0;
-    #10; // PC becomes 12 again
-
-    $finish;
-end
+        #800;
+        $display("");
+        $display("=== AFTER COUNTDOWN ===");
+        $display("x2 = %0d (expected 0)", 
+                  uut.reg_file_inst.registers[2]);
+        $display("state(x10) = %0d (expected 0 = INPUT_WAITING)", 
+                  uut.reg_file_inst.registers[10]);
+        $display("LEDs = %b (expected all 0)", LEDs);
+    end
 
 endmodule

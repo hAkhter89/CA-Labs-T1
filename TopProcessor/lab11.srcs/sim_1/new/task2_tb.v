@@ -26,17 +26,24 @@ module tb_task2();
     reg clk;
     reg rst;
     wire [15:0] LEDs;
-    
+    wire [6:0] seg;
+    wire [3:0] an;
+    wire dp;    
     topProcessor uut (
         .clk(clk),
         .rst(rst),
-        .LEDs(LEDs)
+        .LEDs(LEDs),
+        .seg(seg),
+        .an(an),
+        .dp(dp)
     );
     
     // 10ns clock
     always #5 clk = ~clk;
     
     initial begin
+        // Load instruction memory
+        $readmemh("instructions_task2.mem", uut.inst_mem.memory);
         clk = 0;
         rst = 1;
         #20;
