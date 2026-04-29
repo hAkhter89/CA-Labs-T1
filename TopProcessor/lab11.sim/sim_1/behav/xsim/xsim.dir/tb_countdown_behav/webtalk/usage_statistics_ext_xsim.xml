@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Apr 28 16:01:35 2026'>
+<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Wed Apr 29 16:17:18 2026'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2902540" description="" />
-  <keyValuePair key="date_generated" value="Tue Apr 28 16:01:34 2026" description="" />
+  <keyValuePair key="date_generated" value="Wed Apr 29 16:17:17 2026" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="XSIM v2020.1 (64-bit)" description="" />
   <keyValuePair key="project_id" value="f8d01134f7dc4a89acf0d8e4e2a22205" description="" />
-  <keyValuePair key="project_iteration" value="2" description="" />
-  <keyValuePair key="random_id" value="8e097f97-eddd-4fd2-82b1-db8e82a2a7c6" description="" />
-  <keyValuePair key="registration_id" value="8e097f97-eddd-4fd2-82b1-db8e82a2a7c6" description="" />
+  <keyValuePair key="project_iteration" value="29" description="" />
+  <keyValuePair key="random_id" value="1f2cf946-abf2-41af-b7b0-7cf16526f7a0" description="" />
+  <keyValuePair key="registration_id" value="1f2cf946-abf2-41af-b7b0-7cf16526f7a0" description="" />
   <keyValuePair key="route_design" value="FALSE" description="" />
   <keyValuePair key="target_device" value="not_applicable" description="" />
   <keyValuePair key="target_family" value="not_applicable" description="" />
@@ -19,12 +19,12 @@
   <keyValuePair key="tool_flow" value="xsim_vivado" description="" />
  </section>
  <section name="user_environment" level="1" order="2" description="">
-  <keyValuePair key="cpu_name" value="AMD Ryzen 5 2600 Six-Core Processor            " description="" />
-  <keyValuePair key="cpu_speed" value="3394 MHz" description="" />
+  <keyValuePair key="cpu_name" value="Intel(R) Core(TM) Ultra 5 235" description="" />
+  <keyValuePair key="cpu_speed" value="3379 MHz" description="" />
   <keyValuePair key="os_name" value="Windows Server 2016 or Windows 10" description="" />
   <keyValuePair key="os_release" value="major release  (build 9200)" description="" />
-  <keyValuePair key="system_ram" value="17.000 GB" description="" />
-  <keyValuePair key="total_processors" value="2" description="" />
+  <keyValuePair key="system_ram" value="16.000 GB" description="" />
+  <keyValuePair key="total_processors" value="1" description="" />
  </section>
  <section name="vivado_usage" level="1" order="3" description="">
  </section>
@@ -35,8 +35,8 @@
   <section name="usage" level="2" order="2" description="">
    <keyValuePair key="iteration" value="1" description="" />
    <keyValuePair key="runtime" value="1 us" description="" />
-   <keyValuePair key="simulation_memory" value="9552_KB" description="" />
-   <keyValuePair key="simulation_time" value="0.09_sec" description="" />
+   <keyValuePair key="simulation_memory" value="8808_KB" description="" />
+   <keyValuePair key="simulation_time" value="0.06_sec" description="" />
    <keyValuePair key="trace_waveform" value="true" description="" />
   </section>
  </section>

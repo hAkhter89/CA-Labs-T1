@@ -73,7 +73,7 @@ always @(*) begin
             JAL      = 0;
             ALUOp    = 2'b00;
         end
-        7'b1100011: begin // BEQ / BLT -- ORIGINAL: BEQ only, TASK2: added BLT support via funct3 in ALUControl
+        7'b1100011: begin // BEQ / BLT -- Original: BEQ only, TASK2: added BLT support via funct3 in ALUControl
             RegWrite = 0;
             ALUSrc   = 0;
             MemRead  = 0;

@@ -24,7 +24,7 @@ module ALUControl(
     input [1:0] ALUOp,
     input [2:0] funct3,
     input funct7,
-    input op5,            // <--- NEW: Connect this to instruction[5] in your datapath
+    input op5,            // to solve addi negative numbers, previous it treated it as a subtract instruction
     output reg [3:0] ALUControl,
     output reg BLT_taken  // TASK2 ADDITION: flag for BLT branch decision
 );
@@ -55,7 +55,7 @@ always @(*) begin
             BLT_taken = 0;
             case(funct3)
                 3'b000: begin
-                    // <--- FIX: Only subtract if it's an R-Type (op5 == 1) AND funct7 == 1
+                    // FIX Only subtract if it's an R-Type (op5 == 1) AND funct7 == 1
                     if(funct7 == 1 && op5 == 1)
                         ALUControl = 4'b0110; // SUB
                     else

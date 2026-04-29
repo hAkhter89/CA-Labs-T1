@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Apr 29 16:57:00 2026
+# Process ID: 14808
+# Current directory: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1
+# Command line: vivado.exe -log TopModule.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TopModule.tcl -notrace
+# Log file: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.vdi
+# Journal file: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source TopModule.tcl -notrace

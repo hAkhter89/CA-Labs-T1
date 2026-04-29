@@ -1,0 +1,177 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Wed Apr 29 16:57:20 2026
+| Host         : HU-DOPX-DIL16 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
+| Design       : TopModule
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    99 |
+|    Minimum number of control sets                        |    99 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    11 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    99 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |    64 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    35 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              17 |            5 |
+| No           | No                    | Yes                    |              60 |           21 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             512 |          341 |
+| Yes          | No                    | Yes                    |            1024 |          575 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |             Enable Signal             | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------+------------------+------------------+----------------+--------------+
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_46[0]     |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_73[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_79[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[59][7]_i_3_0[0] |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[61][7]_i_4_0[0] |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[6][7]_i_6_0[0]  |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[4][7]_i_6_3[0]  |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[55][7]_i_3_0[0] |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[53][7]_i_3_0[0] |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[8][2]_i_4_1[0]  |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[9][7]_i_3_0[0]  |                  |                8 |              8 |         1.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[8][2]_i_4_0[0]  |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_54[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_24[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_37[0]     |                  |                3 |              8 |         2.67 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_87[0]     |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[20][7]_i_3_0[0] |                  |                8 |              8 |         1.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[12][7]_i_4_2[0] |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[15][7]_i_4_0[0] |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_11[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[14][7]_i_5_0[0] |                  |                3 |              8 |         2.67 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[12][7]_i_4_0[0] |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[12][7]_i_4_1[0] |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[17][7]_i_4_0[0] |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[2][7]_i_3_7[0]  |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[27][7]_i_5_0[0] |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[26][7]_i_5_0[0] |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[2][7]_i_3_5[0]  |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[26][7]_i_4_0[0] |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[39][7]_i_4_0[0] |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[41][7]_i_4_0[0] |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[31][7]_i_3_0[0] |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[35][7]_i_4_0[0] |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[4][7]_i_6_0[0]  |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_58[0]     |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_42[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_77[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_32[0]     |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_28[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_20[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_61[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_63[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_22[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_27[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[4][7]_i_6_1[0]  |                  |                8 |              8 |         1.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_39[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_71[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_75[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_30[0]     |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/memory[4][7]_i_6_2[0]  |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_67[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_40[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_49[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_70[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_52[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_35[0]     |                  |                7 |              8 |         1.14 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_65[0]     |                  |                3 |              8 |         2.67 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_25[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_26[0]     |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_23[0]     |                  |                6 |              8 |         1.33 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_44[0]     |                  |                3 |              8 |         2.67 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_56[0]     |                  |                5 |              8 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_33[0]     |                  |                4 |              8 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_21[0]     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG |                                       |                  |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG |                                       | rst_IBUF         |                6 |             28 |         4.67 |
+|  slow_clk_BUFG |                                       | rst_IBUF         |               15 |             32 |         2.13 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[0]_20[0]     | rst_IBUF         |               19 |             32 |         1.68 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[0]_17[0]     | rst_IBUF         |               17 |             32 |         1.88 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[0]_14[0]     | rst_IBUF         |               15 |             32 |         2.13 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_102[0]    | rst_IBUF         |               25 |             32 |         1.28 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_108[0]    | rst_IBUF         |               15 |             32 |         2.13 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_109[0]    | rst_IBUF         |               21 |             32 |         1.52 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_103[0]    | rst_IBUF         |               16 |             32 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_104[0]    | rst_IBUF         |               16 |             32 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_106[0]    | rst_IBUF         |               13 |             32 |         2.46 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[0]_19[0]     | rst_IBUF         |               20 |             32 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[0]_15[0]     | rst_IBUF         |               20 |             32 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_101[0]    | rst_IBUF         |               14 |             32 |         2.29 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_107[0]    | rst_IBUF         |               20 |             32 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_110[0]    | rst_IBUF         |               16 |             32 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_100[0]    | rst_IBUF         |               16 |             32 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_111[0]    | rst_IBUF         |               21 |             32 |         1.52 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_112[0]    | rst_IBUF         |               18 |             32 |         1.78 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_105[0]    | rst_IBUF         |               19 |             32 |         1.68 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[0]_18[0]     | rst_IBUF         |               20 |             32 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[0]_16[0]     | rst_IBUF         |               15 |             32 |         2.13 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_113[0]    | rst_IBUF         |               17 |             32 |         1.88 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_96[0]     | rst_IBUF         |               17 |             32 |         1.88 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_94[0]     | rst_IBUF         |               18 |             32 |         1.78 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_93[0]     | rst_IBUF         |               20 |             32 |         1.60 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_114[0]    | rst_IBUF         |               19 |             32 |         1.68 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_97[0]     | rst_IBUF         |               16 |             32 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_91[0]     | rst_IBUF         |               18 |             32 |         1.78 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_98[0]     | rst_IBUF         |               16 |             32 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_95[0]     | rst_IBUF         |               16 |             32 |         2.00 |
+|  slow_clk_BUFG | my_cpu/pc_inst/E[0]                   | rst_IBUF         |               21 |             32 |         1.52 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_99[0]     | rst_IBUF         |               19 |             32 |         1.68 |
+|  slow_clk_BUFG | my_cpu/pc_inst/PCout_reg[1]_92[0]     | rst_IBUF         |               22 |             32 |         1.45 |
++----------------+---------------------------------------+------------------+------------------+----------------+--------------+
+
+
