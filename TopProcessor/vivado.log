@@ -294,3 +294,42 @@ launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): 
 launch_runs synth_1 -jobs 7
 [Wed Apr 29 13:27:59 2026] Launched synth_1...
 Run output will be captured here: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1
+
+set_property top TopModule [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+set_property top tb_countdown [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_runs synth_1 -jobs 7
+[Wed Apr 29 13:34:24 2026] Launched synth_1...
+Run output will be captured here: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 7
+[Wed Apr 29 13:35:28 2026] Launched synth_1...
+Run output will be captured here: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1
+
+launch_runs synth_1 -jobs 7
+[Wed Apr 29 13:38:09 2026] Launched synth_1...
+Run output will be captured here: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 7
+[Wed Apr 29 13:40:42 2026] Launched synth_1...
+Run output will be captured here: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/runme.log
+[Wed Apr 29 13:40:42 2026] Launched impl_1...
+Run output will be captured here: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 29 13:56:49 2026...
