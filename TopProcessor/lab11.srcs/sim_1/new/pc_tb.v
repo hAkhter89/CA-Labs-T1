@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`timescale 1ns / 1ps
+
 
 module tb_countdown();
     reg clk;
@@ -29,7 +29,8 @@ module tb_countdown();
     wire [3:0] an;
     wire dp;
     
-    topProcessor uut (
+    // CHANGED: Instantiating TopModule instead of topProcessor
+    TopModule uut (
         .clk(clk),
         .rst(rst),
         .LEDs(LEDs),
@@ -38,10 +39,12 @@ module tb_countdown();
         .dp(dp)
     );
     
+    // 100MHz clock (10ns period)
     always #5 clk = ~clk;
     
     initial begin
-        $readmemh("instructions_task1.mem", uut.inst_mem.memory);
+        // CHANGED: Added .my_cpu. to path
+        $readmemh("instructions_task1.mem", uut.my_cpu.inst_mem.memory);
         clk = 0;
         rst = 1;
         #20;
@@ -53,18 +56,19 @@ module tb_countdown();
     // General monitor
     always @(posedge clk) begin
         if (rst == 0) begin
+            // CHANGED: Added .my_cpu. to all internal probes
             $display("Time=%0t | PC=%0d | inst=%h | state(x10)=%0d | x2=%0d | x1=%0d | LEDs=%b | ALUResult=%h | MemWrite=%b | address=%h | write_data=%h",
                 $time,
-                uut.PCout,
-                uut.instruction,
-                uut.reg_file_inst.registers[10],
-                uut.reg_file_inst.registers[2],
-                uut.reg_file_inst.registers[1],
+                uut.my_cpu.PCout,
+                uut.my_cpu.instruction,
+                uut.my_cpu.reg_file_inst.registers[10],
+                uut.my_cpu.reg_file_inst.registers[2],
+                uut.my_cpu.reg_file_inst.registers[1],
                 LEDs,
-                uut.ALUResult,
-                uut.MemWrite,
-                uut.ALUResult,
-                uut.readData2
+                uut.my_cpu.ALUResult,
+                uut.my_cpu.MemWrite,
+                uut.my_cpu.ALUResult,
+                uut.my_cpu.readData2
             );
         end
     end
@@ -72,19 +76,20 @@ module tb_countdown();
     // Branch monitor
     always @(posedge clk) begin
         if (rst == 0) begin
-            if (uut.instruction[6:0] == 7'b1100011) begin
+            // CHANGED: Added .my_cpu. to all internal probes
+            if (uut.my_cpu.instruction[6:0] == 7'b1100011) begin
                 $display("BRANCH | PC=%0d | inst=%h | funct3=%b | rs1=x%0d | rs2=x%0d | imm=%0d | ALUResult=%h | zero=%b | BLT_taken=%b | PCSrc=%b | next_PC=%0d",
-                    uut.PCout,
-                    uut.instruction,
-                    uut.instruction[14:12],
-                    uut.instruction[19:15],
-                    uut.instruction[24:20],
-                    $signed(uut.imm),
-                    uut.ALUResult,
-                    uut.zero,
-                    uut.BLT_taken,
-                    uut.PCSrc,
-                    uut.next);
+                    uut.my_cpu.PCout,
+                    uut.my_cpu.instruction,
+                    uut.my_cpu.instruction[14:12],
+                    uut.my_cpu.instruction[19:15],
+                    uut.my_cpu.instruction[24:20],
+                    $signed(uut.my_cpu.imm),
+                    uut.my_cpu.ALUResult,
+                    uut.my_cpu.zero,
+                    uut.my_cpu.BLT_taken,
+                    uut.my_cpu.PCSrc,
+                    uut.my_cpu.next);
             end
         end
     end
@@ -94,28 +99,29 @@ module tb_countdown();
         #120;
         $display("");
         $display("=== AFTER INIT ===");
+        // CHANGED: Added .my_cpu. to all internal probes
         $display("state(x10) = %0d (expected 0)", 
-                  uut.reg_file_inst.registers[10]);
+                  uut.my_cpu.reg_file_inst.registers[10]);
         $display("x2 = %0d (expected 5)", 
-                  uut.reg_file_inst.registers[2]);
+                  uut.my_cpu.reg_file_inst.registers[2]);
         $display("memory[4] = %0d (expected 5)", 
-                  uut.data_mem_inst.memory[4]);
+                  uut.my_cpu.data_mem_inst.memory[4]);
 
         #200;
         $display("");
         $display("=== AFTER INPUT STATE ===");
         $display("state(x10) = %0d (expected 1 = COUNTDOWN)", 
-                  uut.reg_file_inst.registers[10]);
+                  uut.my_cpu.reg_file_inst.registers[10]);
         $display("x2 = %0d (expected 5)", 
-                  uut.reg_file_inst.registers[2]);
+                  uut.my_cpu.reg_file_inst.registers[2]);
 
         #800;
         $display("");
         $display("=== AFTER COUNTDOWN ===");
         $display("x2 = %0d (expected 0)", 
-                  uut.reg_file_inst.registers[2]);
+                  uut.my_cpu.reg_file_inst.registers[2]);
         $display("state(x10) = %0d (expected 0 = INPUT_WAITING)", 
-                  uut.reg_file_inst.registers[10]);
+                  uut.my_cpu.reg_file_inst.registers[10]);
         $display("LEDs = %b (expected all 0)", LEDs);
     end
 

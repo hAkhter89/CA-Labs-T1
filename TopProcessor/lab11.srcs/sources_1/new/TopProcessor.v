@@ -28,29 +28,35 @@ module topProcessor(
     output wire [3:0] an,
     output wire dp
 );
+
 // PC wires
 wire [31:0] PCout, next, PC4;
 wire [31:0] instruction;
+
 // Control wires
 wire Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite;
 wire [1:0] ALUOp;
 wire [3:0] ALUctrl;
 wire op5 = instruction[5]; // fix for addi negative numbers
 wire PCSrc;
+
 // Register wires
 wire [31:0] imm;
 wire [31:0] readData1, readData2, writeData;
+
 // ALU wires
 wire [31:0] ALU_B, ALUResult;
 wire zero;
+
 // Memory wires
 wire [31:0] mem_readData;
 wire [31:0] target; // branch_target
+wire [31:0] counter_data; // <--- NEW: Wire to catch the memory[8] output
+
 // Task2 wires
 wire JAL;
 wire BLT_taken;
 wire [31:0] writeData_final;
-
 
 assign PCSrc = (Branch & zero) | (Branch & BLT_taken & ALUResult[31]) | JAL; // TASK2 CHANGE
 
@@ -86,7 +92,8 @@ DataMemory data_mem_inst (
     .funct3(instruction[14:12]), // Pass the funct3 bits from your instruction
     .address(ALUResult),         // Pass the full 32-bit ALU result
     .write_data(readData2),
-    .read_data(mem_readData)
+    .read_data(mem_readData),
+    .mem8_out(counter_data)      // <--- NEW: Catch the memory data here
 );
 
 // MAINCONTROL
@@ -180,13 +187,15 @@ immGen imm_gen_inst (
 // SEVEN SEGMENT
 SevenSegment seg_inst (
     .clk(clk),
-    .data(ALUResult[31:16]),        // upper 16 bits
+    .data(counter_data[31:16]),    // <--- CHANGED: Feed upper 16 bits of memory counter
     .seg(seg),
     .an(an)
 );
 
-assign LEDs = ALUResult[15:0];
-assign dp = 1;
+// Map lower 16 bits of memory counter to LEDs
+assign LEDs[15:0] = counter_data[15:0];
+//assign LEDs[15:0} = ALUResult[15:0];
+//AlUResult[31:16] - seven segment
+wire any_branch_taken = (Branch & zero) | (Branch & BLT_taken & ALUResult[31]);
+assign dp = ~any_branch_taken; 
 endmodule
-
-

@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/09/2026 10:31:29 AM
+// Create Date: 04/29/2026 12:43:37 PM
 // Design Name: 
-// Module Name: leds
+// Module Name: clockdivider
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,19 +20,23 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-
-module leds(
-    input clk,
-    input rst,
-    input [31:0] data_in,
-    output reg [31:0] leds_out
+module clockdivider(
+    input wire clk,
+    input wire rst,
+    output reg slow_clk
 );
 
-always @(posedge clk or posedge rst) begin
-    if (rst)
-        leds_out <= 32'b0;
-    else
-        leds_out <= data_in;
-end
+reg [26:0] counter;
 
-endmodule
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        counter <= 27'd0;
+        slow_clk <= 1'b0;
+    end else if (counter == 27'd49_999_999) begin
+        counter <= 27'd0;
+        slow_clk <= ~slow_clk;
+    end else begin
+        counter <= counter + 1;
+    end
+end
+endmodule    

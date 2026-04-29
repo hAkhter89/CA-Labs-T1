@@ -26,11 +26,18 @@ module instructionMemory#(
     input [OPERAND_LENGTH:0] instAddress,
     output reg [31:0] instruction
 );
-reg [7:0] memory [0:255];
+
+    reg [7:0] memory [0:255];
+
+    initial begin
+        $readmemh("instructions_task1.mem", memory);
+    end
+
     always @(*) begin
         instruction = { memory[instAddress[7:0]],
                         memory[instAddress[7:0] + 1],
                         memory[instAddress[7:0] + 2],
                         memory[instAddress[7:0] + 3] };
     end
+
 endmodule
