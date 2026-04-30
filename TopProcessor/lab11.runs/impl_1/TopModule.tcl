@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.tcl"
+  variable script "C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.tcl"
   variable category "vivado_impl"
 }
 
@@ -129,15 +129,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.cache/wt [current_project]
-  set_property parent.project_path C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.xpr [current_project]
-  set_property ip_output_repo C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.cache/wt [current_project]
+  set_property parent.project_path C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.xpr [current_project]
+  set_property ip_output_repo C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/TopModule.dcp
+  add_files -quiet C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/TopModule.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc
+  read_xdc C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

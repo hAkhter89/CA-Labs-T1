@@ -25,6 +25,7 @@ module topProcessor(
     input wire fast_clk,
     input wire rst,
     output wire [15:0] LEDs,
+    input wire [15:0] SW,        // ADD switches
     output wire [6:0] seg,
     output wire [3:0] an,
     output wire dp
@@ -94,7 +95,8 @@ DataMemory data_mem_inst (
     .address(ALUResult),         // Pass the full 32-bit ALU result
     .write_data(readData2),
     .read_data(mem_readData),
-    .mem8_out(counter_data)      // <--- NEW: Catch the memory data here
+    .mem8_out(counter_data),      // <--- NEW: Catch the memory data here
+    .SW(SW)
 );
 
 // MAINCONTROL
@@ -198,6 +200,7 @@ SevenSegment seg_inst (
 assign LEDs[15:0] = ALUResult[15:0];
 //ALUResult[31:16] - seven segment
 //counter_data[31:16]
-wire any_branch_taken = (Branch & zero) | (Branch & BLT_taken & ALUResult[31]);
-assign dp = ~any_branch_taken; 
+//wire any_branch_taken = (Branch & zero) | (Branch & BLT_taken & ALUResult[31]);
+//assign dp = ~any_branch_taken; 
+assign dp = ~(JAL | BLT_taken); // for task3
 endmodule

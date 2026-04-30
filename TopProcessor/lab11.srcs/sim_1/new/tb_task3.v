@@ -21,9 +21,7 @@
 
 
 `timescale 1ns / 1ps
-
 module tb_task3();
-
     reg clk;
     reg rst;
     wire [15:0] LEDs;
@@ -40,79 +38,71 @@ module tb_task3();
         .dp(dp)
     );
     
-    // 10ns clock
     always #5 clk = ~clk;
     
     initial begin
-        // Load instruction memory for Task 3
         $readmemh("instructions_task3.mem", uut.inst_mem.memory);
         clk = 0;
         rst = 1;
         #20;
         rst = 0;
-        
-        // Stop at 1000ns to prevent console flooding.
-        // Task 3 counts to 4096, which would take ~200,000ns to finish!
-        #1000;
+        #5000;  // run longer to see shifting
         $finish;
     end
     
     initial begin
         #25;
-        $display("=== TASK 3 DEBUG ===");
-        $display("PC\t| inst\t\t| ALUOp\t| ALUctrl\t| ALUSrc\t| imm\t\t| ALU_B\t\t| ALUResult\t| writeData\t| writeData_final\t| RegWrite");
-        $display("----------------------------------------------------------------------------------------------------------------------------------------");
+        $display("=== TASK 3 - SHIFT LEFT PROGRAM ===");
+        $display("PC\t| inst\t\t| x1(limit)\t| x2(value)\t| x5(ret)\t| LEDs\t\t\t| mem[8]");
+        $display("------------------------------------------------------------------------");
     end
 
     always @(negedge clk) begin
         if (rst == 0) begin
-            $display("%0d\t| %h\t| %b\t| %b\t\t| %b\t\t| %h\t| %h\t| %h\t\t| %h\t\t| %h\t\t\t| %b",
+            $display("%0d\t| %h\t| %h\t| %0d\t\t| %0d\t\t| %b\t| %0d",
                 uut.PCout,
                 uut.instruction,
-                uut.ALUOp,
-                uut.ALUctrl,
-                uut.ALUSrc,
-                uut.imm,
-                uut.ALU_B,
-                uut.ALUResult,
-                uut.writeData,
-                uut.writeData_final,
-                uut.RegWrite);
+                uut.reg_file_inst.registers[1],   // x1 = upper limit from LUI
+                uut.reg_file_inst.registers[2],   // x2 = shifting value
+                uut.reg_file_inst.registers[5],   // x5 = return address from JAL
+                LEDs,
+                uut.data_mem_inst.memory[8]);     // led_port value
         end
     end
 
-    // check results at a specific snapshot point (near 1000ns)
     initial begin
-        #995; // wait until just before the simulation finishes
-        @(negedge clk); 
+        #4990;
+        @(negedge clk);
         $display("");
-        $display("=== TASK 3 SNAPSHOT RESULTS ===");
+        $display("=== TASK 3 RESULTS ===");
 
-        // Check if LUI correctly set the upper limit
-        if (uut.reg_file_inst.registers[1] == 32'h00001000)
-            $display("LUI  PASS: x1 = 0x%h (expected 0x00001000)", 
+        // LUI check
+        if (uut.reg_file_inst.registers[1] == 32'h00005000)
+            $display("LUI  PASS: x1 = 0x%h (expected 0x00005000)", 
                       uut.reg_file_inst.registers[1]);
         else
-            $display("LUI  FAIL: x1 = 0x%h (expected 0x00001000)", 
+            $display("LUI  FAIL: x1 = 0x%h (expected 0x00005000)", 
                       uut.reg_file_inst.registers[1]);
 
-        // Check if the loop is successfully incrementing the counter (x2)
-        if (uut.reg_file_inst.registers[2] > 0)
-            $display("LOOP PASS: x2 = %0d (Counter is successfully incrementing!)", 
+        // Shift/BLT check - x2 should be power of 2
+        if (uut.reg_file_inst.registers[2] > 1)
+            $display("SLLI+BLT PASS: x2 = %0d (shifting correctly)", 
                       uut.reg_file_inst.registers[2]);
         else
-            $display("LOOP FAIL: x2 = %0d (Counter is stuck at 0)", 
+            $display("SLLI+BLT FAIL: x2 = %0d (not shifting)", 
                       uut.reg_file_inst.registers[2]);
 
-        // Check if the subroutine (JAL/JALR) is correctly mirroring x2 into x6
-        if ((uut.reg_file_inst.registers[6] == uut.reg_file_inst.registers[2]) && uut.reg_file_inst.registers[2] > 0)
-            $display("JAL  PASS: x6 = %0d (Subroutine is accurately updating LEDs)", 
-                      uut.reg_file_inst.registers[6]);
+        // JAL check - x5 should have return address
+        if (uut.reg_file_inst.registers[5] > 0)
+            $display("JAL  PASS: x5 = %0d (return address saved)", 
+                      uut.reg_file_inst.registers[5]);
         else
-            $display("JAL  FAIL: x6 = %0d (Subroutine failed to match x2)", 
-                      uut.reg_file_inst.registers[6]);
+            $display("JAL  FAIL: x5 = 0 (JAL not working)", 
+                      uut.reg_file_inst.registers[5]);
 
-        $display("===============================");
+        // Final LED value check
+        $display("Final LEDs = %b = %0d", LEDs, LEDs);
+        $display("Final mem[8] = %0d", uut.data_mem_inst.memory[8]);
+        $display("======================");
     end
-
 endmodule

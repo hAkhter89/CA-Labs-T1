@@ -194,6 +194,62 @@
 //    end
 
 //endmodule
+// WORKING SYNTHESIZEABLE
+//module DataMemory(
+//    input  wire        clk,
+//    input  wire        MemWrite,
+//    input  wire        MemRead,
+//    input  wire [2:0]  funct3,
+//    input  wire [31:0] address,
+//    input  wire [31:0] write_data,
+//    output reg  [31:0] read_data,
+//    output wire [31:0] mem8_out,
+//    input wire [15:0] SW        // ADD switches
+//    );
+//    reg [7:0] memory [0:63];
+//    wire [5:0] addr = address[5:0];
+
+//    assign mem8_out = {memory[11], memory[10], memory[9], memory[8]};
+
+//    integer j;
+//    initial begin
+//        for (j = 0; j < 64; j = j + 1)
+//            memory[j] = 8'h00;
+//    end
+
+//    always @(posedge clk) begin
+//        if (MemWrite) begin
+//            case (funct3)
+//                3'b000: memory[addr] <= write_data[7:0];
+//                3'b001: begin
+//                    memory[addr]   <= write_data[7:0];
+//                    memory[addr+1] <= write_data[15:8];
+//                end
+//                3'b010: begin
+//                    memory[addr]   <= write_data[7:0];
+//                    memory[addr+1] <= write_data[15:8];
+//                    memory[addr+2] <= write_data[23:16];
+//                    memory[addr+3] <= write_data[31:24];
+//                end
+//            endcase
+//        end
+//    end
+
+//    always @(*) begin
+//        if (MemRead) begin
+//            case (funct3)
+//                3'b000: read_data = {{24{memory[addr][7]}}, memory[addr]};
+//                3'b100: read_data = {24'b0, memory[addr]};
+//                3'b001: read_data = {{16{memory[addr+1][7]}}, memory[addr+1], memory[addr]};
+//                3'b101: read_data = {16'b0, memory[addr+1], memory[addr]};
+//                3'b010: read_data = {memory[addr+3], memory[addr+2], memory[addr+1], memory[addr]};
+//                default: read_data = 32'd0;
+//            endcase
+//        end else begin
+//            read_data = 32'd0;
+//        end
+//    end
+//endmodule
 
 module DataMemory(
     input  wire        clk,
@@ -203,7 +259,8 @@ module DataMemory(
     input  wire [31:0] address,
     input  wire [31:0] write_data,
     output reg  [31:0] read_data,
-    output wire [31:0] mem8_out 
+    output wire [31:0] mem8_out,
+    input  wire [15:0] SW
 );
     reg [7:0] memory [0:63];
     wire [5:0] addr = address[5:0];
@@ -237,11 +294,17 @@ module DataMemory(
     always @(*) begin
         if (MemRead) begin
             case (funct3)
+                3'b010: begin // lw
+                    if (address == 32'h00000004)
+                        read_data = {16'b0, SW};  // intercept switch read
+                    else
+                        read_data = {memory[addr+3], memory[addr+2],
+                                     memory[addr+1], memory[addr]};
+                end
                 3'b000: read_data = {{24{memory[addr][7]}}, memory[addr]};
                 3'b100: read_data = {24'b0, memory[addr]};
                 3'b001: read_data = {{16{memory[addr+1][7]}}, memory[addr+1], memory[addr]};
                 3'b101: read_data = {16'b0, memory[addr+1], memory[addr]};
-                3'b010: read_data = {memory[addr+3], memory[addr+2], memory[addr+1], memory[addr]};
                 default: read_data = 32'd0;
             endcase
         end else begin

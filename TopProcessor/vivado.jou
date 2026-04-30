@@ -2,153 +2,93 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed Apr 29 15:35:19 2026
-# Process ID: 6624
-# Current directory: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10864 C:\Users\ha10609\Downloads\CA-Labs-T1\TopProcessor\lab11.xpr
-# Log file: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/vivado.log
-# Journal file: C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor\vivado.jou
+# Start of session at: Thu Apr 30 10:12:18 2026
+# Process ID: 13292
+# Current directory: C:/Users/tau/Documents/CA-Labs-T1/TopProcessor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13876 C:\Users\tau\Documents\CA-Labs-T1\TopProcessor\lab11.xpr
+# Log file: C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/vivado.log
+# Journal file: C:/Users/tau/Documents/CA-Labs-T1/TopProcessor\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.xpr
+open_project C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.xpr
 update_compile_order -fileset sources_1
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
-set_property top tb_countdown [get_filesets sim_1]
+set_property top tb_task3 [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 # Re-enabling previously disabled source management mode.
 set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sim_1
 launch_simulation
-source tb_countdown.tcl
+source tb_task3.tcl
 close_sim
 launch_simulation
-source tb_countdown.tcl
+source tb_task3.tcl
 close_sim
-launch_simulation
-source tb_countdown.tcl
-close_sim
-launch_runs synth_1 -jobs 7
-wait_on_run synth_1
-launch_runs impl_1 -jobs 7
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 7
-wait_on_run impl_1
-open_hw_manager
 reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 7
+launch_runs impl_1 -to_step write_bitstream -jobs 6
 wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_run impl_1
+open_hw_manager
 connect_hw_server -allow_non_jtag
 open_hw_target
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
 current_hw_device [get_hw_devices xc7a35t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_task2 [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-source tb_task2.tcl
-close_sim
-launch_simulation
-source tb_task2.tcl
-close_sim
-launch_simulation
-source tb_task2.tcl
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 7
+launch_runs impl_1 -to_step write_bitstream -jobs 6
 wait_on_run impl_1
 reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 7
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-close_sim
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_countdown [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-source tb_countdown.tcl
-close_sim
-launch_simulation
-source tb_countdown.tcl
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 7
+launch_runs impl_1 -to_step write_bitstream -jobs 6
 wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-close_hw_manager
+launch_simulation
+source tb_task3.tcl
 reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 7
+launch_runs impl_1 -to_step write_bitstream -jobs 6
 wait_on_run impl_1
-open_hw_manager
-connect_hw_server -allow_non_jtag
-open_hw_target
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-current_hw_device [get_hw_devices xc7a35t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-close_hw_manager
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 7
-wait_on_run impl_1
-open_hw_manager
-connect_hw_server -allow_non_jtag
-open_hw_target
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-current_hw_device [get_hw_devices xc7a35t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/impl_1/TopModule.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 close_sim

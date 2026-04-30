@@ -24,6 +24,7 @@ module TopModule (
     input wire clk,         // 100 MHz clock from the board's pin
     input wire rst,         // Reset switch/button
     output wire [15:0] LEDs,
+    input wire [15:0] SW,        // ADD switches
     output wire [6:0] seg,
     output wire [3:0] an,
     output wire dp
@@ -42,10 +43,11 @@ module TopModule (
     //  RISC-V Processor
     // feed clk for simulaation/ slow_clk for fpga
     topProcessor my_cpu (
-        .clk(slow_clk), //clk
+        .clk(clk), //clk
         .fast_clk(clk), // for 7-segment
         .rst(rst),
         .LEDs(LEDs),
+        .SW(SW),
         .seg(seg),
         .an(an),
         .dp(dp)

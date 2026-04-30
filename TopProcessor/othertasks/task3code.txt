@@ -1,67 +1,39 @@
-# ============================================
-# TASK 3 - Count up loop using LUI, BLT, JAL (No JALR)
-# ============================================
-# Registers used:
-# x1 = upper limit (from LUI)
-# x2 = counter
-# x6 = LED output register
-# (x5 is unused here since we hardcode the return jump)
+.text
+.globl main
 
-# INIT
-lui  x1, 0x00001       # x1 = 0x00001000 (upper limit)
-addi x2, x0, 0         # counter = 0
+main:
+    # LUI - load upper bound
+   lui x1, 0x00001        # x1 = 0x00001000 = 4096
 
-# MAIN LOOP
-loop:
-    jal  x0, display            # Jump down to display subroutine (use x0 as we aren't saving a return address)
-    
-return_here:                    # <--- EXPLICIT RETURN LABEL
-    addi x2, x2, 1              # counter++ 
-    blt  x2, x1, loop           # if counter < limit, loop back to top
-    
-    addi x2, x0, 0              # limit reached, reset counter to 0
-    jal  x0, loop               # jump back to top
+    # Set up value to shift
+    addi x2, x0, 1          # x2 = 1 (start value)
 
-# DISPLAY SUBROUTINE
+shift_loop:
+    # Multiply by 2 via shift left
+    slli x2, x2, 1          # x2 = x2 << 1 (x2 * 2)
+
+    # JAL - store and display result
+    jal  x5, display        # call display
+
+    # BLT - if x2 < upper bound, keep shifting
+    blt  x2, x1, shift_loop # if x2 < 20480, loop
+
+done:
+    # Store final value and halt
+    sw   x2, 8(x0)          # display final value on LEDs
+    beq  x0, x0, done       # infinite loop - halt here
+
+# Display subroutine
 display:
-    addi x6, x2, 0              # x6 = current counter (write to LEDs)
-    jal  x0, return_here        # HARDCODED RETURN: Jump explicitly back to the increment phase
+    sw   x2, 8(x0)          # write to led_port
+    jal  x5, shift_loop     # return
 
-
-
-00
-00
-10
-b7
-00
-00
-01
-13
-01
-40
-00
-6f
-00
-11
-01
-13
-fe
-11
-4c
-e3
-00
-00
-01
-13
-ff
-1f
-f0
-6f
-00
-01
-03
-13
-fe
-df
-f0
-6f
+0x000050b7 // 0x000190B7
+0x00100113
+0x00111113
+0x010002ef
+0xfe114ce3
+0x00202423
+0xfe000ee3
+0x00202423
+0xfe9ff2ef

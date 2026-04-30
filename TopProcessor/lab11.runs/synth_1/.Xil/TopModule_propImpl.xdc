@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc rfile:../../../lab11.srcs/constrs_1/new/const.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc rfile:../../../lab11.srcs/constrs_1/new/const.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]

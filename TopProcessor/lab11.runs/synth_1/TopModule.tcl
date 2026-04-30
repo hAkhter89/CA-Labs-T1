@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/TopModule.tcl"
+  variable script "C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.runs/synth_1/TopModule.tcl"
   variable category "vivado_synth"
 }
 
@@ -78,35 +78,35 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.cache/wt [current_project]
-set_property parent.project_path C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.cache/wt [current_project]
+set_property parent.project_path C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.cache/ip [current_project]
+set_property ip_output_repo c:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_mem {
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.sim/sim_1/behav/xsim/instructions_task1.mem
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.sim/sim_1/behav/xsim/instructions_task2.mem
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.sim/sim_1/behav/xsim/instructions_task3.mem
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.sim/sim_1/behav/xsim/instructions_task1.mem
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.sim/sim_1/behav/xsim/instructions_task2.mem
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.sim/sim_1/behav/xsim/instructions_task3.mem
 }
 read_verilog -library xil_defaultlib {
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/2_MUX.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/ALU.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/ALUControl.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/BranchAdd.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/DataMemory.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/InstructionMemory.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/MainControl.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/PC.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/PCAdder.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/Register.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/TopProcessor.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/clockdivider.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/immGen.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/sevensegment.v
-  C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/top_module.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/2_MUX.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/ALU.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/ALUControl.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/BranchAdd.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/DataMemory.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/InstructionMemory.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/MainControl.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/PC.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/PCAdder.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/Register.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/TopProcessor.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/clockdivider.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/immGen.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/sevensegment.v
+  C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/sources_1/new/top_module.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -117,8 +117,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc
-set_property used_in_implementation false [get_files C:/Users/ha10609/Downloads/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc]
+read_xdc C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc
+set_property used_in_implementation false [get_files C:/Users/tau/Documents/CA-Labs-T1/TopProcessor/lab11.srcs/constrs_1/new/const.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
