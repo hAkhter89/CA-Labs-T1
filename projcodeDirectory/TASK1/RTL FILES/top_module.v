@@ -29,28 +29,26 @@ module TopModule (
     output wire dp
 );
 
-    // 1. Create a wire to carry the slow clock
+    // slow clock
     wire slow_clk;
 
-    // 2. Instantiate the Clock Divider
+    // Clock Divider
     clockdivider clk_div (
         .clk(clk), 
         .rst(rst), 
         .slow_clk(slow_clk)
     );
 
-    // 3. Instantiate your RISC-V Processor
-    // IMPORTANT: Feed 'slow_clk' into it instead of 'clk'!
+    //  RISC-V Processor
+    // feed clk for simulaation/ slow_clk for fpga
     topProcessor my_cpu (
-        .clk(slow_clk),     // <--- The magic happens here
+        .clk(slow_clk), //clk
+        .fast_clk(clk), // for 7-segment
         .rst(rst),
         .LEDs(LEDs),
         .seg(seg),
         .an(an),
         .dp(dp)
     );
-
-    // 4. (Optional) Map your branch flag to the last LED if you haven't yet
-    // assign LEDs[15] = my_cpu.BLT_taken; 
     
 endmodule

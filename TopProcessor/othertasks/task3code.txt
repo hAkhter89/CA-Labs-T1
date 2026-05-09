@@ -3,32 +3,34 @@
 
 main:
     # LUI - load upper bound
-   lui x1, 0x00001        # x1 = 0x00001000 = 4096
+    lui x1, 0x00001        # x1 = 0x00001000 = 4096
 
     # Set up value to shift
-    addi x2, x0, 1          # x2 = 1 (start value)
+    addi x2, x0, 1         # x2 = 1 (start value)
 
 shift_loop:
     # Multiply by 2 via shift left
-    slli x2, x2, 1          # x2 = x2 << 1 (x2 * 2)
+    slli x2, x2, 1         # x2 = x2 << 1 (x2 * 2)
 
-    # JAL - store and display result
-    jal  x5, display        # call display
+    # JAL: jump to subroutine (saves return address in x5)
+    jal  x5, display       
 
+after_display:             
     # BLT - if x2 < upper bound, keep shifting
-    blt  x2, x1, shift_loop # if x2 < 20480, loop
+    blt  x2, x1, shift_loop 
 
 done:
     # Store final value and halt
-    sw   x2, 8(x0)          # display final value on LEDs
-    beq  x0, x0, done       # infinite loop - halt here
+    sw   x2, 8(x0)         # display final value on LEDs
+    beq  x0, x0, done      # infinite loop 
 
 # Display subroutine
 display:
-    sw   x2, 8(x0)          # write to led_port
-    jal  x5, shift_loop     # return
-
-0x000050b7 // 0x000190B7
+    sw   x2, 8(x0)         # write to led_port
+    
+    # MANUAL RETURN: use jal to jump back and demonstrate blt
+    jal  x0, after_display
+0x000010b7
 0x00100113
 0x00111113
 0x010002ef
@@ -37,3 +39,12 @@ display:
 0xfe000ee3
 0x00202423
 0xfe9ff2ef
+0x000010b7
+0x00100113
+0x00111113
+0xfedff2ef
+0xfc114ae3
+0x00202423
+0xfc000ce3
+0x00202423
+0xfcdff06f

@@ -22,8 +22,9 @@
 
 module topProcessor(
     input wire clk,
+    input wire fast_clk,
     input wire rst,
-    output wire [15:0] LEDs,
+    output wire [15:0] LEDs,     
     output wire [6:0] seg,
     output wire [3:0] an,
     output wire dp
@@ -186,16 +187,18 @@ immGen imm_gen_inst (
 
 // SEVEN SEGMENT
 SevenSegment seg_inst (
-    .clk(clk),
-    .data(counter_data[31:16]),    // <--- CHANGED: Feed upper 16 bits of memory counter
+    .clk(fast_clk), //
+    .data(ALUResult[31:16]),    //
     .seg(seg),
     .an(an)
 );
 
 // Map lower 16 bits of memory counter to LEDs
-assign LEDs[15:0] = counter_data[15:0];
-//assign LEDs[15:0} = ALUResult[15:0];
-//AlUResult[31:16] - seven segment
-wire any_branch_taken = (Branch & zero) | (Branch & BLT_taken & ALUResult[31]);
-assign dp = ~any_branch_taken; 
+//assign LEDs[15:0] = counter_data[15:0];
+assign LEDs[15:0] = ALUResult[15:0];
+//ALUResult[31:16] - seven segment
+//counter_data[31:16]
+//wire any_branch_taken = (Branch & zero) | (Branch & BLT_taken & ALUResult[31]);
+//assign dp = ~any_branch_taken; 
+assign dp = ~(JAL | BLT_taken); // for task3
 endmodule

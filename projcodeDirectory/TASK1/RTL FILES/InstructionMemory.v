@@ -30,7 +30,7 @@ module instructionMemory#(
     reg [7:0] memory [0:255];
 
     initial begin
-        $readmemh("instructions_task1.mem", memory);
+        $readmemh("instructions_task3.mem", memory); // for fpga
     end
 
     always @(*) begin
